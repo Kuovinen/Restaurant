@@ -211,7 +211,7 @@ h5 {
   min-width: 30vh;
   padding: 1rem;
 }
-.orderItem,
+
 .total {
   display: flex;
   justify-content: space-between;
@@ -221,6 +221,16 @@ h5 {
   margin-top: 1rem;
   border-top: 0.1rem solid white;
   justify-content: end;
+}
+.orderItem {
+  color: white;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.orderPrice,
+.orderAmount {
+  text-align: end;
 }
 
 .menu {
