@@ -6,7 +6,28 @@ export default function DishTab(props) {
       price: props.price,
       key: props.id,
     };
-    props.setOrderArray((original) => [...original, object]);
+    if (props.orderArray.length > 0) {
+      //if same element exists
+      if (
+        props.orderArray.filter((element) => element.name == props.title)
+          .length > 0
+      ) {
+        //change amount of existing element
+        props.setOrderArray((array) =>
+          array.map((element) =>
+            element.name == props.title
+              ? { ...element, amount: element.amount + 1 }
+              : element
+          )
+        );
+        //if same element doesn't exists, then just add the new one
+      } else {
+        props.setOrderArray((original) => [...original, object]);
+      }
+      //if order form is still emepty add the new one
+    } else {
+      props.setOrderArray((original) => [...original, object]);
+    }
   }
   return (
     <div className="dishTab">
