@@ -3,12 +3,19 @@ import dishesList from "./dishes.js";
 import MenuItem from "./MenuItem.js";
 import menuItems from "./menu.js";
 import OrderItem from "./OrderItem.js";
-let menu = menuItems.map((element) => <MenuItem {...element} />);
 
 export default function Header(props) {
+  let menu = menuItems.map((element) => (
+    <MenuItem
+      {...element}
+      orderArray={props.orderArray}
+      setOrderArray={props.setOrderArray}
+    />
+  ));
   let dishes = dishesList.map((element) => (
     <DishTab
       {...element}
+      class={"dishTabDaily"}
       id={element.key}
       orderArray={props.orderArray}
       setOrderArray={props.setOrderArray}
@@ -17,7 +24,9 @@ export default function Header(props) {
 
   return (
     <main>
+      {/*DAILY DISHES*/}
       <div className="dishes">{dishes}</div>
+      {/*Order form on the right*/}
       <div className="currentOrder">
         {props.orderArray.map((element, index) => (
           <OrderItem
@@ -39,6 +48,7 @@ export default function Header(props) {
           €
         </div>{" "}
       </div>
+      {/*BOTTOM MENU*/}
       <div className="menu">{menu}</div>
     </main>
   );
