@@ -30,7 +30,8 @@ export default function Header(props) {
         <div className="total">
           {props.orderArray.reduce((previous, next) => {
             console.log(typeof previous + " " + previous);
-            let result = parseFloat(previous) + next.price;
+            let result =
+              parseFloat(previous) + next.price * parseFloat(next.amount);
             result = parseFloat(result);
             result = result.toFixed(2);
             return result;
