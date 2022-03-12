@@ -1,3 +1,37 @@
+import { useState } from "react";
+
+import DishTab from "./DishTab.js";
+import dishesList from "./dishes.js";
+
 export default function MenuItem(props) {
-  return <div className="menuItem">{props.title}</div>;
+  let dishes = dishesList.map((element) => (
+    <DishTab
+      {...element}
+      class={"dishTab"}
+      id={element.key}
+      orderArray={props.orderArray}
+      setOrderArray={props.setOrderArray}
+    />
+  ));
+
+  function openMenu() {
+    display == "none" ? setDisplay("grid") : setDisplay("none");
+  }
+  let [display, setDisplay] = useState("none");
+
+  return (
+    <div>
+      <div
+        className="menuButton"
+        onClick={() => {
+          openMenu();
+        }}
+      >
+        {props.title}
+      </div>
+      <div className="menuContent" style={{ display: display }}>
+        {dishes}
+      </div>
+    </div>
+  );
 }
