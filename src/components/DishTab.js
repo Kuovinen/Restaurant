@@ -30,7 +30,7 @@ export default function DishTab(props) {
     }
   }
   return (
-    <div className="dishTab">
+    <div className={props.class}>
       <img className="img" src={props.img} alt="" />
       <div className="titlePrice">
         <h4 className="title">{props.title}</h4>
