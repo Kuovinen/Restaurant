@@ -27,27 +27,33 @@ export default function Header(props) {
       {/*DAILY DISHES*/}
       <div className="dishes">{dishes}</div>
       {/*Order form on the right*/}
-      <div className="currentOrder">
-        {props.orderArray.map((element, index) => (
-          <OrderItem
-            key={index}
-            price={element.price}
-            title={element.name}
-            amount={element.amount}
-          /> //use KEY or maybe ID to later target specific element for removal
-        ))}
-        <div className="total">
-          {props.orderArray.reduce((previous, next) => {
-            console.log(typeof previous + " " + previous);
-            let result =
-              parseFloat(previous) + next.price * parseFloat(next.amount);
-            result = parseFloat(result);
-            result = result.toFixed(2);
-            return result;
-          }, 0)}
-          €
-        </div>{" "}
+      <div className="orderForm">
+        <div className="currentOrder">
+          CURRENT ORDER:
+          {props.orderArray.map((element, index) => (
+            <OrderItem
+              key={index}
+              price={element.price}
+              title={element.name}
+              amount={element.amount}
+            /> //use KEY or maybe ID to later target specific element for removal
+          ))}
+          <div className="total">
+            {props.orderArray.reduce((previous, next) => {
+              console.log(typeof previous + " " + previous);
+              let result =
+                parseFloat(previous) + next.price * parseFloat(next.amount);
+              result = parseFloat(result);
+              result = result.toFixed(2);
+              return result;
+            }, 0)}
+            €
+          </div>
+          <br />
+          <button className="orderButton">ORDER</button>
+        </div>
       </div>
+
       {/*BOTTOM MENU*/}
       <div className="menu">{menu}</div>
     </main>
