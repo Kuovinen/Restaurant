@@ -9,9 +9,24 @@ body {
   font-family: arial;
   margin: 0;
   padding: 0;
-  background-image: url("../public/images/background.jpg");
+  /*background-image: url("../public/images/background.jpg");*/
   overflow-x: hidden;
   box-sizing: border-box;
+}
+.bkg {
+  position: fixed;
+  height: 100%;
+  z-index: -20;
+}
+@media screen and (orientation: portrait) {
+  .bkg {
+    height: 100%;
+  }
+}
+@media screen and (orientation: landscape) {
+  .bkg {
+    width: 100%;
+  }
 }
 header {
   position: relative;
