@@ -1,21 +1,30 @@
 import DishTab from "./DishTab.js";
-import dishesList from "./dishes.js";
+import dishesList from "./dailies.js";
 import MenuItem from "./MenuItem.js";
-import menuItems from "./menu.js";
 import OrderItem from "./OrderItem.js";
 
 export default function Header(props) {
-  let menu = menuItems.map((element) => (
+  let menuItems = [
+    { title: "SALADS" },
+    { title: "HOT DISHES" },
+    { title: "COLD DISHES" },
+    { title: "DRINKS" },
+    { title: "FAST FOOD" },
+  ];
+
+  let menu = menuItems.map((element, index) => (
     <MenuItem
       {...element}
+      key={index + "menu"}
       orderArray={props.orderArray}
       setOrderArray={props.setOrderArray}
     />
   ));
-  let dishes = dishesList.map((element) => (
+  let dishes = dishesList.map((element, index) => (
     <DishTab
       {...element}
       class={"dishTabDaily"}
+      key={index}
       id={element.key}
       orderArray={props.orderArray}
       setOrderArray={props.setOrderArray}
@@ -32,7 +41,7 @@ export default function Header(props) {
           CURRENT ORDER:
           {props.orderArray.map((element, index) => (
             <OrderItem
-              key={index}
+              key={index + "order"}
               price={element.price}
               title={element.name}
               amount={element.amount}
@@ -55,7 +64,10 @@ export default function Header(props) {
       </div>
 
       {/*BOTTOM MENU*/}
-      <div className="menu">{menu}</div>
+      <div className="menu">
+        <div className="menuTitle">MENU</div>
+        {menu}
+      </div>
     </main>
   );
 }
