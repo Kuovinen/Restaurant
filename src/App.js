@@ -8,6 +8,7 @@ function App() {
 
   return (
     <div className="App">
+      <img className="bkg" src={"/images/background.jpg"} alt="" />
       <Header />
       <Main orderArray={orderArray} setOrderArray={setOrderArray} />
     </div>
