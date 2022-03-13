@@ -2,7 +2,7 @@ import DishTab from "./DishTab.js";
 import dishesList from "./foodLists/dailies.js";
 import MenuItem from "./MenuItem.js";
 import OrderItem from "./OrderItem.js";
-import salads from "./salads.js";
+import salads from "./foodLists/salads.js";
 import hotDishes from "./foodLists/hots.js";
 import coldDishes from "./foodLists/colds.js";
 import drinks from "./foodLists/drinks.js";
