@@ -1,15 +1,18 @@
 import DishTab from "./DishTab.js";
-import dishesList from "./dailies.js";
+import dishesList from "./foodLists/dailies.js";
 import MenuItem from "./MenuItem.js";
 import OrderItem from "./OrderItem.js";
-
+import salads from "./salads.js";
+import hotDishes from "./foodLists/hots.js";
+import coldDishes from "./foodLists/colds.js";
+import drinks from "./foodLists/drinks.js";
 export default function Header(props) {
   let menuItems = [
-    { title: "SALADS" },
-    { title: "HOT DISHES" },
-    { title: "COLD DISHES" },
-    { title: "DRINKS" },
-    { title: "FAST FOOD" },
+    { title: "SALADS", dishes: salads },
+    { title: "HOT DISHES", dishes: hotDishes },
+    { title: "COLD DISHES", dishes: coldDishes },
+    { title: "DRINKS", dishes: drinks },
+    { title: "FAST FOOD", dishes: salads },
   ];
 
   let menu = menuItems.map((element, index) => (
