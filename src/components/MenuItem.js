@@ -1,10 +1,9 @@
 import { useState } from "react";
 
 import DishTab from "./DishTab.js";
-import dishesList from "./dishes.js";
 
 export default function MenuItem(props) {
-  let dishes = dishesList.map((element) => (
+  let dishes = props.dishes.map((element) => (
     <DishTab
       {...element}
       class={"dishTab"}
