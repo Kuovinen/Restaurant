@@ -10,6 +10,7 @@ function App() {
   let [selectedDish, setSelectedDish] = useState({
     selectedDishTitle: "Pestromy",
     selectedDishImg: "/images/dish5.jpeg",
+    ingredients: "Food item 1, food item 2",
   });
   return (
     <div className="App">
