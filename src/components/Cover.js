@@ -16,16 +16,9 @@ export default function Cover(props) {
           alt="selectedDishImg"
         />
         <div className="selectedDishTitle">
-          {props.selectedDish.selectedDishTitle}
+          {props.selectedDish.ingredients}
         </div>
-        <p className="ingredients">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-          voluptate suscipit harum perferendis, et in corrupti? Ducimus, sequi
-          facilis. Iure aliquam aspernatur suscipit cupiditate iste dolore
-          dolorum modi id perspiciatis labore blanditiis quia mollitia delectus
-          dolor, esse reprehenderit. Aspernatur a, natus quibusdam dolor vel
-          iusto dolore animi ullam. Nulla, similique.
-        </p>
+        <p className="ingredients">{props.selectedDish.ingredients}</p>
         <button className="selectedDishClose">CLOSE</button>
       </div>
     </div>
