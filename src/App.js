@@ -6,8 +6,11 @@ import Cover from "./components/Cover.js";
 
 function App() {
   let [orderArray, setOrderArray] = useState([]);
-  let [coverDisplay, setCoverDisplay] = useState(["flex"]);
-  let [selectedDish, setSelectedDish] = useState({});
+  let [coverDisplay, setCoverDisplay] = useState("flex");
+  let [selectedDish, setSelectedDish] = useState({
+    selectedDishTitle: "Pestromy",
+    selectedDishImg: "/images/dish5.jpeg",
+  });
   return (
     <div className="App">
       <img className="bkg" src={"/images/background.jpg"} alt="" />
@@ -21,6 +24,7 @@ function App() {
       <Cover
         coverDisplay={coverDisplay}
         setCoverDisplay={setCoverDisplay}
+        setSelectedDish={setSelectedDish}
         selectedDish={selectedDish}
       />
     </div>
