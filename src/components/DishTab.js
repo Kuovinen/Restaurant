@@ -29,11 +29,13 @@ export default function DishTab(props) {
       props.setOrderArray((original) => [...original, object]);
     }
   }
+  //function that covers screen in black and produces and more details dish tab
   function displayCover() {
     props.setCoverDisplay("flex");
     props.setSelectedDish({
       selectedDishTitle: props.title,
       selectedDishImg: props.img,
+      ingredients: props.ingredients,
     });
   }
   return (
