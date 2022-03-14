@@ -10,6 +10,8 @@ export default function MenuItem(props) {
       id={element.key}
       orderArray={props.orderArray}
       setOrderArray={props.setOrderArray}
+      setCoverDisplay={props.setCoverDisplay}
+      setSelectedDish={props.setSelectedDish}
     />
   ));
 
