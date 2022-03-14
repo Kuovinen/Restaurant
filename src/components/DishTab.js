@@ -29,14 +29,27 @@ export default function DishTab(props) {
       props.setOrderArray((original) => [...original, object]);
     }
   }
+  function displayCover() {
+    props.setCoverDisplay("flex");
+    props.setSelectedDish({
+      selectedDishTitle: props.title,
+      selectedDishImg: props.img,
+    });
+  }
   return (
-    <div className={props.class}>
+    <div className={props.class} onClick={displayCover}>
       <img className="img" src={props.img} alt="" />
       <div className="titlePrice">
         <h4 className="title">{props.title}</h4>
         <h4 className="price">{props.price}€</h4>
         <h5 className="calories">{props.calories}</h5>
-        <button className="add" onClick={addToOrder}>
+        <button
+          className="add"
+          onClick={(e) => {
+            e.stopPropagation();
+            addToOrder();
+          }}
+        >
           <span>+</span>
           <span className="addTxt">ADD</span>
         </button>
