@@ -324,7 +324,7 @@ h5 {
 
 .greyout {
   background: var(--cp-Black80);
-  position: absolute;
+  position: fixed;
   justify-content: center;
   width: 100vw;
   height: 100vh;
