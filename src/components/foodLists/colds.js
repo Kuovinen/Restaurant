@@ -5,7 +5,7 @@ let dishesList = [
     title: "Double Avacado",
     calories: "700cal",
     price: 14.99,
-    ingridients: "Avocado, bread, tomatoes",
+    ingredients: "Avocado, bread, tomatoes",
     warnings: { gluten: true, lactose: false, nuts: true },
   },
   {
@@ -14,7 +14,7 @@ let dishesList = [
     title: "Avacado Toast",
     calories: "400cal",
     price: 7.99,
-    ingridients: "Avocado, bread, tomatoes",
+    ingredients: "Avocado, bread, tomatoes",
     warnings: { gluten: true, lactose: false, nuts: true },
   },
 ];

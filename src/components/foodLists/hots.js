@@ -5,7 +5,7 @@ let dishesList = [
     title: "Ramen bistro",
     calories: "300cal",
     price: 15.99,
-    ingridients: "Egg noodles, Onions, Paprika, Beef",
+    ingredients: "Egg noodles, Onions, Paprika, Beef",
     warnings: { gluten: true, lactose: false, nuts: true },
   },
 ];
