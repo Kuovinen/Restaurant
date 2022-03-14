@@ -5,6 +5,8 @@ let dishesList = [
     title: "Mozzarella in red",
     calories: "300cal",
     price: 10.99,
+    ingridients: "Mozzarella, Spinach, tomatoes",
+    warnings: { gluten: false, lactose: false, nuts: false },
   },
   {
     key: "4",
@@ -12,6 +14,8 @@ let dishesList = [
     title: "Salad festo",
     calories: "150cal",
     price: 6.29,
+    ingridients: "Mozzarella, Spinach, tomatoes",
+    warnings: { gluten: false, lactose: false, nuts: false },
   },
   {
     key: "6",

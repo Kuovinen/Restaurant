@@ -5,6 +5,8 @@ let dishesList = [
     title: "Coffee & Spice",
     calories: "300cal",
     price: 5.99,
+    ingridients: "Black Coffee, Wheat Bun, Hazelnuts",
+    warnings: { gluten: false, lactose: false, nuts: true },
   },
 ];
 
