@@ -6,7 +6,7 @@ import Cover from "./components/Cover.js";
 
 function App() {
   let [orderArray, setOrderArray] = useState([]);
-  let [coverDisplay, setCoverDisplay] = useState("flex");
+  let [coverDisplay, setCoverDisplay] = useState("none");
   let [selectedDish, setSelectedDish] = useState({
     selectedDishTitle: "Pestromy",
     selectedDishImg: "/images/dish5.jpeg",
