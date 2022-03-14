@@ -31,6 +31,8 @@ export default function Header(props) {
       id={element.key}
       orderArray={props.orderArray}
       setOrderArray={props.setOrderArray}
+      setCoverDisplay={props.setCoverDisplay}
+      setSelectedDish={props.setSelectedDish}
     />
   ));
 
