@@ -12,10 +12,12 @@ export default function Cover(props) {
         <div className="selectedDishCardClose">X</div>
         <img
           className="selectedDish"
-          src="/images/dish2.jpeg"
+          src={props.selectedDish.selectedDishImg}
           alt="selectedDishImg"
         />
-        <div className="selectedDishTitle">DISH TITLE</div>
+        <div className="selectedDishTitle">
+          {props.selectedDish.selectedDishTitle}
+        </div>
         <p className="ingredients">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
           voluptate suscipit harum perferendis, et in corrupti? Ducimus, sequi
