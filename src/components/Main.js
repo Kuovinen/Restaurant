@@ -21,6 +21,8 @@ export default function Header(props) {
       key={index + "menu"}
       orderArray={props.orderArray}
       setOrderArray={props.setOrderArray}
+      setCoverDisplay={props.setCoverDisplay}
+      setSelectedDish={props.setSelectedDish}
     />
   ));
   let dishes = dishesList.map((element, index) => (
