@@ -4,6 +4,7 @@ export default function DishTab(props) {
       name: props.title,
       amount: 1,
       price: props.price,
+      img: props.img,
       key: props.id,
     };
     if (props.orderArray.length > 0) {

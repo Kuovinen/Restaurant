@@ -38,6 +38,10 @@ export default function Header(props) {
     />
   ));
 
+  function displayOrder() {
+    props.setOrderDisplay("flex");
+  }
+
   return (
     <main>
       {/*DAILY DISHES*/}
@@ -52,11 +56,11 @@ export default function Header(props) {
               price={element.price}
               title={element.name}
               amount={element.amount}
+              class="orderItemSide"
             /> //use KEY or maybe ID to later target specific element for removal
           ))}
           <div className="total">
             {props.orderArray.reduce((previous, next) => {
-              console.log(typeof previous + " " + previous);
               let result =
                 parseFloat(previous) + next.price * parseFloat(next.amount);
               result = parseFloat(result);
@@ -66,7 +70,9 @@ export default function Header(props) {
             €
           </div>
           <br />
-          <button className="orderButton">ORDER</button>
+          <button className="orderButton" onClick={displayOrder}>
+            ORDER
+          </button>
         </div>
       </div>
 

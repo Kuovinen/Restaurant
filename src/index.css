@@ -1,5 +1,5 @@
 :root {
-  --cp-Green: green;
+  --cp-Green: rgb(40, 167, 69);
   --cp-Black: rgb(0, 0, 0);
   --cp-Grey: rgb(179, 179, 179);
   --cp-Black80: rgba(0, 0, 0, 0.8);
@@ -64,7 +64,7 @@ header {
   font-size: 2vh;
   background: var(--cp-Green);
   border: none;
-  border-radius: 1vh;
+  border-radius: 0.5vh;
   color: white;
   cursor: pointer;
 }
@@ -121,7 +121,7 @@ main {
 .dishes {
   display: grid;
   background: var(--cp-Black80);
-  border-radius: 2vh;
+  border-radius: 0.5vh;
   padding: 2vh;
   grid-column: 1/4;
   gap: 2vh;
@@ -131,7 +131,7 @@ main {
 .dishTabDaily,
 .dishTab {
   background: hsl(0, 0%, 100%, 0.9);
-  border-radius: 1rem;
+  border-radius: 1vh;
   width: 20vh;
   overflow: hidden;
   position: relative;
@@ -148,7 +148,7 @@ main {
   margin-top: 0.3vh;
   margin-left: 6.5vh;
   padding: 0.7vh;
-  border-radius: 2vh;
+  border-radius: 0.5vh;
   font-weight: 700;
   animation: blink 1s linear infinite;
 }
@@ -206,7 +206,7 @@ h5 {
   right: 1vh;
   border: none;
   background-color: var(--cp-Green);
-  border-radius: 2vh;
+  border-radius: 0.5vh;
   width: 4vh;
   height: 4vh;
   font-size: 3.5vh;
@@ -244,7 +244,7 @@ h5 {
   display: flex;
   flex-direction: column;
   background: var(--cp-Black80);
-  border-radius: 2vh;
+  border-radius: 0.5vh;
   min-width: 30vh;
   padding: 1rem;
   position: sticky;
@@ -261,7 +261,7 @@ h5 {
   border-top: 0.1rem solid white;
   justify-content: end;
 }
-.orderItem {
+.orderItemSide {
   color: white;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -274,7 +274,7 @@ h5 {
 .orderButton {
   background: var(--cp-Green);
   border: none;
-  border-radius: 1vh;
+  border-radius: 0.5vh;
   color: white;
   padding: 1vh;
   cursor: pointer;
@@ -295,7 +295,7 @@ h5 {
   flex-direction: column;
   gap: 0.2vh;
   background: var(--cp-Black80);
-  border-radius: 2vh;
+  border-radius: 0.5vh;
   padding: 2vh 0vh;
   grid-row: 2;
   grid-column: 1/4;
@@ -336,7 +336,7 @@ h5 {
   width: 35vw;
   background: white;
   overflow: hidden;
-  border-radius: 2vh;
+  border-radius: 0.5vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -366,4 +366,42 @@ h5 {
   right: 2vh;
   cursor: pointer;
   top: 2vh;
+}
+.orderContainter {
+  width: 60vw;
+  background: var(--cp-Black80);
+  border-radius: 0.5vh;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+@media (max-width: 600px) {
+  .orderContainter {
+    width: 100vw;
+  }
+}
+.orderContainerBtn {
+  width: 100%;
+  background: var(--cp-Green);
+  border: none;
+  color: white;
+  padding: 1vh;
+  cursor: pointer;
+  font-size: 2vh;
+}
+.orderContent {
+  color: white;
+  font-size: 3vh;
+  padding: 2vh;
+}
+.orderImg {
+  width: 30%;
+  border-radius: 0.5vh;
+  display: block;
+  margin-bottom: 1vh;
+}
+.orderItemMain {
+  color: white;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  align-items: center;
 }
