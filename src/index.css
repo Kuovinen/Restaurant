@@ -1,5 +1,6 @@
 :root {
   --cp-Green: rgb(40, 167, 69);
+  --cp-Red: rgb(220, 53, 69);
   --cp-Black: rgb(0, 0, 0);
   --cp-Grey: rgb(179, 179, 179);
   --cp-Black80: rgba(0, 0, 0, 0.8);
@@ -396,16 +397,17 @@ h5 {
   max-height: 80vh;
 }
 .orderImg {
-  width: 30%;
+  width: 10vh;
   border-radius: 0.5vh;
   display: block;
-  margin-bottom: 1vh;
 }
 .orderItemMain {
   color: white;
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr 1fr;
+  grid-template-columns: 20vh 3fr 3fr 3fr;
+  gap: 2vh;
   align-items: center;
+  margin-bottom: 1vh;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -416,4 +418,23 @@ h5 {
 ::-webkit-scrollbar-thumb {
   background: white;
   border-radius: 0.2vh;
+}
+.minus,
+.plus {
+  background: var(--cp-Green);
+  cursor: pointer;
+  border-radius: 0.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.minus {
+  background: var(--cp-Red);
+}
+.totalOrderForm {
+  color: var(--cp-Green);
+  font-weight: 700;
+  font-size: 3vh;
+  display: flex;
+  justify-content: center;
 }
