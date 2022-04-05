@@ -86,7 +86,7 @@ header {
 .locationsTXT {
   flex: 3fr;
 }
-.location {
+.locationSelect {
   flex: 3fr;
   height: 80%;
   width: 100%;
@@ -97,6 +97,13 @@ header {
   align-items: center;
   justify-content: end;
   padding-right: 1rem;
+  color: var(--cp-White);
+  font-size: 2vh;
+  cursor: pointer;
+  border: var(--border);
+}
+.locationSelect:focus {
+  outline: none;
 }
 .time {
   border-top: var(--border);
@@ -107,11 +114,26 @@ header {
   justify-content: space-between;
 }
 .deliveryTime {
+  position: relative;
   flex: 3fr;
   height: 80%;
   width: 100%;
   margin-right: 1rem;
   background-color: hsl(0, 0%, 100%, 0.3);
+  color: var(--cp-White);
+  font-size: 2vh;
+  text-align: center;
+  border: var(--border);
+  cursor: pointer;
+  user-select: none;
+}
+.deliveryTime:focus {
+  outline: none;
+}
+.deliveryTime::-webkit-calendar-picker-indicator {
+  position: absolute;
+  padding-left: 100%;
+  cursor: pointer;
 }
 main {
   display: grid;
