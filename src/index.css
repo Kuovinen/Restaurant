@@ -390,7 +390,7 @@ h5 {
   cursor: pointer;
   top: 2vh;
 }
-.orderContainter {
+.uiContainter {
   width: 60vw;
   background: var(--cp-Black80);
   border-radius: 0.5vh;
@@ -399,11 +399,11 @@ h5 {
   user-select: none;
 }
 @media (max-width: 600px) {
-  .orderContainter {
+  .uiContainter {
     width: 100vw;
   }
 }
-.orderContainerBtn {
+.uiContainerBtn {
   width: 100%;
   background: var(--cp-Green);
   border: none;
@@ -460,4 +460,15 @@ h5 {
   font-size: 3vh;
   display: flex;
   justify-content: center;
+}
+
+/**********************************************************/
+/**LOGINFORM***********************************************/
+/**********************************************************/
+.logInGrid {
+  color: var(--cp-Green);
+  margin: 5%;
+  font-weight: 700;
+  display: grid;
+  column-count: repeat(3 1fr);
 }

@@ -10,8 +10,8 @@ export default function Order(props) {
           event.preventDefault();
         }}
       >
-        <div className="orderContainter">
-          <button className="orderContainerBtn" onClick={hide}>
+        <div className="uiContainter">
+          <button className="uiContainerBtn" onClick={hide}>
             CLOSE
           </button>
           <div className="orderContent">
@@ -38,7 +38,7 @@ export default function Order(props) {
             }, 0)}
             €
           </div>
-          <button className="orderContainerBtn" style={{ fontWeight: 700 }}>
+          <button className="uiContainerBtn" style={{ fontWeight: 700 }}>
             ORDER
           </button>
         </div>
