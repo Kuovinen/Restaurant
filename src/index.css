@@ -470,5 +470,11 @@ h5 {
   margin: 5%;
   font-weight: 700;
   display: grid;
-  column-count: repeat(3 1fr);
+  gap: 2vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4vh 4vh;
+}
+input::placeholder {
+  color: var(--cp-Green);
+  font-weight: 700;
 }

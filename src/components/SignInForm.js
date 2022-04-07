@@ -26,19 +26,20 @@ export default function SignInForm(props) {
             CLOSE
           </button>
           <div className="logInGrid">
-            <label htmlFor="name">NAME:</label>
             <input
               type="text"
               name="name"
               value={user.name}
               onChange={typeField}
+              placeholder="name"
             />
-            <label htmlFor="password">PASSWORD:</label>
+
             <input
               type="password"
               name="password"
               value={user.password}
               onChange={typeField}
+              placeholder="password"
             />
           </div>
           <button className="uiContainerBtn" style={{ fontWeight: 700 }}>
