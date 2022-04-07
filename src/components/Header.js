@@ -1,5 +1,5 @@
 import React from "react";
-export default function Header() {
+export default function Header(props) {
   const [hours, setHours] = React.useState("09");
   const [minutes, setMinutes] = React.useState("00");
   function chngHours(event) {
@@ -8,6 +8,9 @@ export default function Header() {
   function chngMins(event) {
     setMinutes(event.target.value);
   }
+  function openLogIn() {
+    props.setSigngInFormDisplay("flex");
+  }
   return (
     <header>
       <div className="logo">
@@ -15,11 +18,13 @@ export default function Header() {
       </div>
 
       <div className="login">
-        <button className="logBtn">SignIn</button>
+        <button className="logBtn" onClick={openLogIn}>
+          SignIn
+        </button>
       </div>
       <div className="locations">
         <span className="label">LOCATIONS:</span>
-        <select class="locationSelect" name="option">
+        <select className="locationSelect" name="option">
           <option value="1">Keskivuori 78b, Helsinki</option>
           <option value="2">Suomalahti 30, Vantaa</option>
           <option value="3">Laarikoski 10a, Espoo</option>
