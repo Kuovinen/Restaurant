@@ -4,10 +4,9 @@ import { toggleOrder } from "../actions.js";
 export default function Order(props) {
   const dispatch = useDispatch();
   const orderDisplay = useSelector((state) => {
-    return state.visualReducer.itemDisplay;
+    return state.visualReducer.orderDisplay;
   });
   function hide() {
-    console.log("did!");
     dispatch(toggleOrder());
   }
   return (

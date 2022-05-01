@@ -1,5 +1,9 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleForm } from "../actions.js";
 export default function Header(props) {
+  const dispatch = useDispatch();
+
   const [hours, setHours] = React.useState("09");
   const [minutes, setMinutes] = React.useState("00");
   function chngHours(event) {
@@ -9,7 +13,7 @@ export default function Header(props) {
     setMinutes(event.target.value);
   }
   function openLogIn() {
-    props.setSigngInFormDisplay("flex");
+    dispatch(toggleForm());
   }
   return (
     <header>

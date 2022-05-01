@@ -1,8 +1,14 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleForm } from "../actions.js";
 export default function SignInForm(props) {
+  const dispatch = useDispatch();
+  const formDisplay = useSelector((state) => {
+    return state.visualReducer.formDisplay;
+  });
   const [user, setUser] = React.useState({ name: "", password: "" });
   function hide() {
-    props.setSigngInFormDisplay("none");
+    dispatch(toggleForm());
   }
   function typeField(event) {
     setUser({ ...user, [event.target.name]: event.target.value });
@@ -15,7 +21,7 @@ export default function SignInForm(props) {
     }
   }
   return (
-    <div className="greyout" style={{ display: props.signgInFormDisplay }}>
+    <div className="greyout" style={{ display: formDisplay }}>
       <form
         onSubmit={(event) => {
           handleSubmit(event);

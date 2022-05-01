@@ -1,4 +1,8 @@
+import { useSelector, useDispatch } from "react-redux";
+import { toggleDish } from "../actions.js";
 export default function DishTab(props) {
+  const dispatch = useDispatch();
+
   function addToOrder() {
     let object = {
       name: props.title,
@@ -30,9 +34,10 @@ export default function DishTab(props) {
       props.setOrderArray((original) => [...original, object]);
     }
   }
-  //function that covers screen in black and produces and more details dish tab
+  //function that covers screen in black and produces and more detailed dish tab
   function displayCover() {
-    props.setCoverDisplay("flex");
+    dispatch(toggleDish());
+
     props.setSelectedDish({
       selectedDishTitle: props.title,
       selectedDishImg: props.img,

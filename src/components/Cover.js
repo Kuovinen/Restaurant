@@ -1,13 +1,15 @@
+import { useSelector, useDispatch } from "react-redux";
+import { toggleDish } from "../actions.js";
 export default function Cover(props) {
+  const dispatch = useDispatch();
+  const dishDisplay = useSelector((state) => {
+    return state.visualReducer.dishDisplay;
+  });
   function hide() {
-    props.setCoverDisplay("none");
+    dispatch(toggleDish());
   }
   return (
-    <div
-      className="greyout"
-      onClick={hide}
-      style={{ display: props.coverDisplay }}
-    >
+    <div className="greyout" onClick={hide} style={{ display: dishDisplay }}>
       <div className="selectedDishCard">
         <div className="selectedDishCardClose">X</div>
         <div className="selectedDishTitle">

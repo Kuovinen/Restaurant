@@ -20,3 +20,13 @@ export function toggleOrder() {
     type: "TOGGLE_ORDER_DISPLAY",
   };
 }
+export function toggleDish() {
+  return {
+    type: "TOGGLE_DISH_DISPLAY",
+  };
+}
+export function toggleForm() {
+  return {
+    type: "TOGGLE_FORM_DISPLAY",
+  };
+}
