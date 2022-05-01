@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { toggleDish } from "../actions.js";
+import { toggleDish, selectDish } from "../actions.js";
 export default function DishTab(props) {
   const dispatch = useDispatch();
 
@@ -37,12 +37,13 @@ export default function DishTab(props) {
   //function that covers screen in black and produces and more detailed dish tab
   function displayCover() {
     dispatch(toggleDish());
-
-    props.setSelectedDish({
-      selectedDishTitle: props.title,
-      selectedDishImg: props.img,
-      ingredients: props.ingredients,
-    });
+    dispatch(
+      selectDish({
+        selectedDishTitle: props.title,
+        selectedDishImg: props.img,
+        ingredients: props.ingredients,
+      })
+    );
   }
   return (
     <div className={props.class} onClick={displayCover}>

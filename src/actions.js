@@ -30,3 +30,9 @@ export function toggleForm() {
     type: "TOGGLE_FORM_DISPLAY",
   };
 }
+export function selectDish(dish) {
+  return {
+    type: "CHANGE_CHOSEN_DISH",
+    payload: dish,
+  };
+}

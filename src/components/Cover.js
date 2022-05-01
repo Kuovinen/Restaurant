@@ -5,23 +5,29 @@ export default function Cover(props) {
   const dishDisplay = useSelector((state) => {
     return state.visualReducer.dishDisplay;
   });
+  const selectedDish = useSelector((state) => {
+    console.log("Chosen item iS:");
+    console.log(state.visualReducer);
+    return state.visualReducer.chosenItem;
+  });
   function hide() {
     dispatch(toggleDish());
   }
+
   return (
     <div className="greyout" onClick={hide} style={{ display: dishDisplay }}>
       <div className="selectedDishCard">
         <div className="selectedDishCardClose">X</div>
         <div className="selectedDishTitle">
-          {props.selectedDish.selectedDishTitle}
+          {selectedDish.selectedDishTitle}
         </div>
         <img
           className="selectedDish"
-          src={props.selectedDish.selectedDishImg}
+          src={selectedDish.selectedDishImg}
           alt="selectedDishImg"
         />
 
-        <p className="ingredients">{props.selectedDish.ingredients}</p>
+        <p className="ingredients">{selectedDish.ingredients}</p>
         <button className="selectedDishClose">CLOSE</button>
       </div>
     </div>

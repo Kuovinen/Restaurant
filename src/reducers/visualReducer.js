@@ -1,5 +1,10 @@
 export default function visualReducer(
-  state = { orderDisplay: "none", dishDisplay: "none", formDisplay: "none" },
+  state = {
+    orderDisplay: "none",
+    dishDisplay: "none",
+    formDisplay: "none",
+    chosenItem: "one",
+  },
   action
 ) {
   switch (action.type) {
@@ -26,6 +31,14 @@ export default function visualReducer(
       return {
         ...state,
         formDisplay: state.formDisplay === "none" ? "flex" : "none",
+      };
+    case "CHANGE_CHOSEN_DISH":
+      console.log("fired off CHANGE_CHOSEN_DISH!");
+      console.log(state);
+      console.log(action.payload);
+      return {
+        ...state,
+        chosenItem: { ...action.payload },
       };
     default:
       return state;
