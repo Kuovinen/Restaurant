@@ -1,4 +1,4 @@
-import OrderItem from "./OrderItem.js";
+import OrderFormItem from "./OrderFormItem.js";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleOrder } from "../actions.js";
 export default function Order(props) {
@@ -23,7 +23,7 @@ export default function Order(props) {
           <div className="orderContent">
             CURRENT ORDER:
             {props.orderArray.map((element, index) => (
-              <OrderItem
+              <OrderFormItem
                 img={element.img}
                 key={index + "order"}
                 price={element.price}

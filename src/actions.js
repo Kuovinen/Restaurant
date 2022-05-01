@@ -1,13 +1,9 @@
 let a = 1;
 export default a;
-export function addItem() {
+export function addItem(item) {
   return {
     type: "ADD_ITEM",
-    payload: {
-      item: {
-        id: 1,
-      },
-    },
+    payload: item,
   };
 }
 export function rmvItem() {

@@ -6,8 +6,6 @@ export default function Cover(props) {
     return state.visualReducer.dishDisplay;
   });
   const selectedDish = useSelector((state) => {
-    console.log("Chosen item iS:");
-    console.log(state.visualReducer);
     return state.visualReducer.chosenItem;
   });
   function hide() {

@@ -1,7 +1,7 @@
 import DishTab from "./DishTab.js";
 import dishesList from "./foodLists/dailies.js";
 import MenuItem from "./MenuItem.js";
-import OrderItem from "./OrderItem.js";
+import OrderFormItem from "./OrderFormItem.js";
 import salads from "./foodLists/salads.js";
 import hotDishes from "./foodLists/hots.js";
 import coldDishes from "./foodLists/colds.js";
@@ -10,6 +10,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggleOrder } from "../actions.js";
 export default function Header(props) {
   const dispatch = useDispatch();
+  const orderArray = useSelector((state) => {
+    return state.shoppingReducer;
+  });
   let menuItems = [
     { title: "SALADS", dishes: salads },
     { title: "HOT DISHES", dishes: hotDishes },
@@ -19,26 +22,10 @@ export default function Header(props) {
   ];
 
   let menu = menuItems.map((element, index) => (
-    <MenuItem
-      {...element}
-      key={index + "menu"}
-      orderArray={props.orderArray}
-      setOrderArray={props.setOrderArray}
-      setCoverDisplay={props.setCoverDisplay}
-      setSelectedDish={props.setSelectedDish}
-    />
+    <MenuItem {...element} key={index + "menu"} />
   ));
   let dishes = dishesList.map((element, index) => (
-    <DishTab
-      {...element}
-      class={"dishTabDaily"}
-      key={index}
-      id={element.key}
-      orderArray={props.orderArray}
-      setOrderArray={props.setOrderArray}
-      setCoverDisplay={props.setCoverDisplay}
-      setSelectedDish={props.setSelectedDish}
-    />
+    <DishTab {...element} class={"dishTabDaily"} key={index} id={element.key} />
   ));
 
   function displayOrder() {
@@ -53,17 +40,17 @@ export default function Header(props) {
       <div className="orderForm">
         <div className="currentOrder">
           CURRENT ORDER:
-          {props.orderArray.map((element, index) => (
-            <OrderItem
+          {orderArray.map((element, index) => (
+            <OrderFormItem
               key={index + "order"}
               price={element.price}
-              title={element.name}
+              title={element.title}
               amount={element.amount}
               class="orderItemSide"
             /> //use KEY or maybe ID to later target specific element for removal
           ))}
           <div className="total">
-            {props.orderArray.reduce((previous, next) => {
+            {orderArray.reduce((previous, next) => {
               let result =
                 parseFloat(previous) + next.price * parseFloat(next.amount);
               result = parseFloat(result);

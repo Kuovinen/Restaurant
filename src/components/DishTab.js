@@ -1,38 +1,19 @@
 import { useSelector, useDispatch } from "react-redux";
-import { toggleDish, selectDish } from "../actions.js";
+import { toggleDish, selectDish, addItem } from "../actions.js";
 export default function DishTab(props) {
   const dispatch = useDispatch();
 
   function addToOrder() {
+    console.log(props.title);
     let object = {
-      name: props.title,
+      title: props.title,
       amount: 1,
       price: props.price,
       img: props.img,
-      key: props.id,
+      id: props.id,
     };
-    if (props.orderArray.length > 0) {
-      //if same element exists
-      if (
-        props.orderArray.filter((element) => element.name === props.title)
-          .length > 0
-      ) {
-        //change amount of existing element
-        props.setOrderArray((array) =>
-          array.map((element) =>
-            element.name === props.title
-              ? { ...element, amount: element.amount + 1 }
-              : element
-          )
-        );
-        //if same element doesn't exists, then just add the new one
-      } else {
-        props.setOrderArray((original) => [...original, object]);
-      }
-      //if order form is still emepty add the new one
-    } else {
-      props.setOrderArray((original) => [...original, object]);
-    }
+
+    dispatch(addItem(object));
   }
   //function that covers screen in black and produces and more detailed dish tab
   function displayCover() {

@@ -3,14 +3,17 @@ export default function visualReducer(
     orderDisplay: "none",
     dishDisplay: "none",
     formDisplay: "none",
-    chosenItem: "one",
+    chosenItem: {
+      selectedDishTitle: "Pestromy",
+      selectedDishImg: "/images/dish5.jpeg",
+      ingredients: "Food item 1, food item 2",
+    },
   },
   action
 ) {
   switch (action.type) {
     case "TOGGLE_ORDER_DISPLAY":
       console.log("fired off ORDER_DISPLAY!");
-      console.log(state);
 
       return {
         ...state,
@@ -18,7 +21,6 @@ export default function visualReducer(
       };
     case "TOGGLE_DISH_DISPLAY":
       console.log("fired off DISH_DISPLAY!");
-      console.log(state);
 
       return {
         ...state,
@@ -26,7 +28,6 @@ export default function visualReducer(
       };
     case "TOGGLE_FORM_DISPLAY":
       console.log("fired off FORM_DISPLAY!");
-      console.log(state);
 
       return {
         ...state,
@@ -34,8 +35,7 @@ export default function visualReducer(
       };
     case "CHANGE_CHOSEN_DISH":
       console.log("fired off CHANGE_CHOSEN_DISH!");
-      console.log(state);
-      console.log(action.payload);
+
       return {
         ...state,
         chosenItem: { ...action.payload },
