@@ -95,7 +95,7 @@ header {
   background-color: hsl(0, 0%, 100%, 0.3);
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   padding-right: 1rem;
   color: var(--cp-White);
   font-size: 2vh;
@@ -173,7 +173,7 @@ main {
   padding: 0.7vh;
   border-radius: 0.5vh;
   font-weight: 700;
-  animation: blink 1s linear infinite;
+  animation: blink 3s linear infinite;
 }
 
 @keyframes blink {
@@ -211,7 +211,7 @@ main {
   grid-row: 1;
   grid-column: 3;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .calories {
   grid-row: 3;
@@ -282,7 +282,7 @@ h5 {
 .total {
   margin-top: 1rem;
   border-top: 0.1rem solid white;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .orderItemSide {
   color: white;
@@ -292,7 +292,7 @@ h5 {
 
 .orderPrice,
 .orderAmount {
-  text-align: end;
+  text-align: flex-end;
 }
 .orderButton {
   background: var(--cp-Green);

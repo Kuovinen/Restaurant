@@ -1,10 +1,17 @@
 import OrderItem from "./OrderItem.js";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleOrder } from "../actions.js";
 export default function Order(props) {
+  const dispatch = useDispatch();
+  const orderDisplay = useSelector((state) => {
+    return state.visualReducer.itemDisplay;
+  });
   function hide() {
-    props.setOrderDisplay("none");
+    console.log("did!");
+    dispatch(toggleOrder());
   }
   return (
-    <div className="greyout " style={{ display: props.orderDisplay }}>
+    <div className="greyout " style={{ display: orderDisplay }}>
       <form
         onSubmit={(event) => {
           event.preventDefault();

@@ -10,13 +10,13 @@ export default function DishTab(props) {
     if (props.orderArray.length > 0) {
       //if same element exists
       if (
-        props.orderArray.filter((element) => element.name == props.title)
+        props.orderArray.filter((element) => element.name === props.title)
           .length > 0
       ) {
         //change amount of existing element
         props.setOrderArray((array) =>
           array.map((element) =>
-            element.name == props.title
+            element.name === props.title
               ? { ...element, amount: element.amount + 1 }
               : element
           )

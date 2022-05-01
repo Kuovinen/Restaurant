@@ -16,7 +16,7 @@ export default function MenuItem(props) {
   ));
 
   function openMenu() {
-    display == "none" ? setDisplay("grid") : setDisplay("none");
+    display === "none" ? setDisplay("grid") : setDisplay("none");
   }
   let [display, setDisplay] = useState("none");
 

@@ -6,7 +6,10 @@ import salads from "./foodLists/salads.js";
 import hotDishes from "./foodLists/hots.js";
 import coldDishes from "./foodLists/colds.js";
 import drinks from "./foodLists/drinks.js";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleOrder } from "../actions.js";
 export default function Header(props) {
+  const dispatch = useDispatch();
   let menuItems = [
     { title: "SALADS", dishes: salads },
     { title: "HOT DISHES", dishes: hotDishes },
@@ -39,7 +42,7 @@ export default function Header(props) {
   ));
 
   function displayOrder() {
-    props.setOrderDisplay("flex");
+    dispatch(toggleOrder());
   }
 
   return (
