@@ -6,6 +6,9 @@ export default function Order(props) {
   const orderDisplay = useSelector((state) => {
     return state.visualReducer.orderDisplay;
   });
+  const orderArray = useSelector((state) => {
+    return state.shoppingReducer;
+  });
   function hide() {
     dispatch(toggleOrder());
   }
@@ -22,12 +25,12 @@ export default function Order(props) {
           </button>
           <div className="orderContent">
             CURRENT ORDER:
-            {props.orderArray.map((element, index) => (
+            {orderArray.map((element, index) => (
               <OrderFormItem
                 img={element.img}
                 key={index + "order"}
                 price={element.price}
-                title={element.name}
+                title={element.title}
                 amount={element.amount}
                 class="orderItemMain"
               /> //use KEY or maybe ID to later target specific element for removal
@@ -35,7 +38,7 @@ export default function Order(props) {
           </div>
           <div className="totalOrderForm">
             TOTAL :{" "}
-            {props.orderArray.reduce((previous, next) => {
+            {orderArray.reduce((previous, next) => {
               let result =
                 parseFloat(previous) + next.price * parseFloat(next.amount);
               result = parseFloat(result);

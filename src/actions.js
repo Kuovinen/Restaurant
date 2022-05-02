@@ -6,9 +6,10 @@ export function addItem(item) {
     payload: item,
   };
 }
-export function rmvItem() {
+export function rmvItem(item) {
   return {
     type: "REMOVE_ITEM",
+    payload: item,
   };
 }
 export function toggleOrder() {

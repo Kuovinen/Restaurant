@@ -11,17 +11,14 @@ export default function shoppingReducer(state = [], action) {
         key: action.payload.id,
       };
       if (state.length > 0) {
-        console.log("got here");
-        console.log(object.name);
-        console.log(state[0].title);
-        console.log(state.filter((element) => element.title == object.name));
-        console.log("filtered");
         //if same element exists
-        if (state.filter((element) => element.name == object.name).length > 0) {
+        if (
+          state.filter((element) => element.title === action.payload.title)
+            .length > 0
+        ) {
           //change amount of existing element
-
           let updatedArray = state.map((element) =>
-            element.name === object.name
+            element.title === object.name
               ? { ...element, amount: element.amount + 1 }
               : element
           );
@@ -36,8 +33,25 @@ export default function shoppingReducer(state = [], action) {
       }
     /********************************************************/
 
-    case "removeItem":
-      return [state.filter((element) => element.id !== action.payload.item.id)];
+    case "REMOVE_ITEM":
+      console.log("fired off rwvItem");
+
+      var updatedArray = state.reduce((result, element) => {
+        if (element.title === action.payload.title && element.amount > 1) {
+          result.push({ ...element, amount: element.amount - 1 });
+          return result;
+        } else if (
+          element.title === action.payload.title &&
+          element.amount == 1
+        ) {
+          return result;
+        }
+        result.push(element);
+        return result;
+      }, []);
+
+      return [...updatedArray];
+
     default:
       //IMPORTANT to return current state if no action type matched
       return state;
