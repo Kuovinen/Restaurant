@@ -451,6 +451,10 @@ h5 {
   justify-content: center;
   align-items: center;
 }
+.minus:hover,
+.plus:hover {
+  opacity: 0.9;
+}
 .minus {
   background: var(--cp-Red);
 }
