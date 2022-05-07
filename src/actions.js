@@ -39,8 +39,20 @@ export function logInUser(data) {
     payload: data,
   };
 }
+export function setLogIn(data) {
+  return {
+    type: "SET_LOGIN",
+    payload: data,
+  };
+}
 export function logOutUser() {
   return {
     type: "LOG_OUT",
+  };
+}
+
+export function resetFeedback() {
+  return {
+    type: "RESET_FEEDBACK",
   };
 }
