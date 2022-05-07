@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleForm } from "../actions.js";
+
+import LogIn from "./LogIn.js";
+
 export default function Header(props) {
   const dispatch = useDispatch();
 
@@ -12,20 +14,15 @@ export default function Header(props) {
   function chngMins(event) {
     setMinutes(event.target.value);
   }
-  function openLogIn() {
-    dispatch(toggleForm());
-  }
+
   return (
     <header>
       <div className="logo">
-        la<span style={{ color: "var(--cp-Green)" }}>C</span>ASA
+        <span id="la">la</span>{" "}
+        <span style={{ color: "var(--cp-Green)" }}>C</span>asa
       </div>
+      <LogIn />
 
-      <div className="login">
-        <button className="logBtn" onClick={openLogIn}>
-          SignIn
-        </button>
-      </div>
       <div className="locations">
         <span className="label">LOCATIONS:</span>
         <select className="locationSelect" name="option">

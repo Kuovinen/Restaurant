@@ -45,17 +45,27 @@ header {
   font-size: 6vh;
   margin-left: 1rem;
   font-weight: 1000;
-  display: flex;
-  align-items: center;
   user-select: none;
 }
-
+#la {
+  font-size: 3vh;
+  margin-right: -1rem;
+}
 .login {
   border-left: var(--border);
   grid-column: 4;
   background: none;
 }
-.logBtn {
+.login2 {
+  border-left: var(--border);
+  grid-column: 4;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  background: none;
+}
+.logBtn1 {
   height: 50%;
   width: 50%;
   position: relative;
@@ -69,6 +79,37 @@ header {
   color: white;
   cursor: pointer;
 }
+.logBtn2 {
+  position: relative;
+
+  background: var(--cp-Green);
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  height: 80%;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+.user {
+  font-weight: 1000;
+  font-size: 2vh;
+}
+.points {
+  font-size: 1.75vh;
+}
+.logBtn1:hover,
+.logBtn2:hover {
+  opacity: 0.85;
+}
+.userData {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#usericon {
+  height: 100%;
+}
+
 .label {
   margin-left: 1rem;
   user-select: none;
@@ -302,7 +343,9 @@ h5 {
   padding: 1vh;
   cursor: pointer;
 }
-
+.orderButton:hover {
+  opacity: 0.9;
+}
 /*-----------------------------------------------------------*/
 /*MENU: -----------------------------------------------------*/
 /*-----------------------------------------------------------*/
@@ -411,6 +454,9 @@ h5 {
   padding: 1vh;
   cursor: pointer;
   font-size: 2vh;
+}
+.uiContainerBtn:hover {
+  opacity: 0.85;
 }
 .orderContent {
   color: white;

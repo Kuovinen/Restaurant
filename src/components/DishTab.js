@@ -4,7 +4,6 @@ export default function DishTab(props) {
   const dispatch = useDispatch();
 
   function addToOrder() {
-    console.log(props.title);
     let object = {
       title: props.title,
       amount: 1,
