@@ -27,6 +27,12 @@ export function toggleForm() {
     type: "TOGGLE_FORM_DISPLAY",
   };
 }
+export function toggleRegDisplay() {
+  return {
+    type: "TOGGLE_REG_DISPLAY",
+  };
+}
+
 export function selectDish(dish) {
   return {
     type: "CHANGE_CHOSEN_DISH",
@@ -42,6 +48,12 @@ export function logInUser(data) {
 export function setLogIn(data) {
   return {
     type: "SET_LOGIN",
+    payload: data,
+  };
+}
+export function setRegistration(data) {
+  return {
+    type: "SET_REG",
     payload: data,
   };
 }
