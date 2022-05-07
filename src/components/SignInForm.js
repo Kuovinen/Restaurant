@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleForm, logInUser, setLogIn, resetFeedback } from "../actions.js";
-export default function SignInForm(props) {
+export default function SignInForm() {
   const dispatch = useDispatch();
   const formDisplay = useSelector((state) => {
     return state.userReducer.formDisplay;
@@ -12,7 +12,7 @@ export default function SignInForm(props) {
   });
   const feedBack = useSelector((state) => {
     console.log(state.userReducer);
-    return state.userReducer.feedback;
+    return state.userReducer.signInFeedback;
   });
   function hide() {
     dispatch(toggleForm());

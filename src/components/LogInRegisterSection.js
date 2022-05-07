@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { toggleForm, logOutUser } from "../actions.js";
+import { toggleForm, toggleRegDisplay, logOutUser } from "../actions.js";
 import userIcon from "../user.svg";
 export default function LogInRegisterSection() {
   const dispatch = useDispatch();
@@ -11,13 +11,17 @@ export default function LogInRegisterSection() {
   function openLogIn() {
     dispatch(toggleForm());
   }
+  function openRegister() {
+    dispatch(toggleRegDisplay());
+  }
+
   function logOut() {
     dispatch(logOutUser());
   }
   //if there is a user return SignIn button, esle return a user logo
   return user.name === null ? (
     <div className="login">
-      <button className="register" onClick={openLogIn}>
+      <button className="register" onClick={openRegister}>
         Register
       </button>
       <button className="logBtn1" onClick={openLogIn}>
