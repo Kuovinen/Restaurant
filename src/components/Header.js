@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import LogInRegisterSection from "./LogInRegisterSection.js";
 
-export default function Header(props) {
+export default function Header() {
   const dispatch = useDispatch();
 
   const [hours, setHours] = React.useState("09");

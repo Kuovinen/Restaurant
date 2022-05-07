@@ -549,3 +549,37 @@ input::placeholder {
   color: var(--cp-Green);
   font-weight: 700;
 }
+/**********************************************************/
+/**FINISHED ORDER******************************************/
+/**********************************************************/
+.finishedOrder {
+  position: relative;
+  width: 60vw;
+  background: var(--cp-Black80);
+  border-radius: 0.5vh;
+  overflow: hidden;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: fit-content;
+  outline: 0.1rem solid var(--cp-Green);
+}
+.closeFinal {
+  background: none;
+  position: absolute;
+  color: var(--cp-Green);
+  font-weight: 1000;
+  font-size: 3rem;
+  border: none;
+  top: 0.5rem;
+  right: 1rem;
+  user-select: none;
+  cursor: pointer;
+}
+.closeFinal:hover {
+  opacity: 0.75;
+}
+
+.orderDetails {
+  margin: 1rem;
+  color: var(--cp-Grey);
+}

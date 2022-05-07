@@ -1,7 +1,7 @@
 import OrderFormItem from "./OrderFormItem.js";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleOrder } from "../actions.js";
-export default function Order(props) {
+export default function Order() {
   const dispatch = useDispatch();
   const orderDisplay = useSelector((state) => {
     return state.visualReducer.orderDisplay;

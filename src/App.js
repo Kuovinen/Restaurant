@@ -5,6 +5,7 @@ import Cover from "./components/Cover.js";
 import OrderForm from "./components/OrderForm.js";
 import SignInForm from "./components/SignInForm.js";
 import RegistrationForm from "./components/RegistrationForm.js";
+import OrderConfirmation from "./components/OrderConfirmation.js";
 import { useDispatch } from "react-redux";
 import { getUsers } from "./actions.js";
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <SignInForm />
       <RegistrationForm />
       <OrderForm orderArray={orderArray} />
+      <OrderConfirmation />
     </div>
   );
 }
