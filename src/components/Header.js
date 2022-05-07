@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import LogIn from "./LogIn.js";
+import LogInRegisterSection from "./LogInRegisterSection.js";
 
 export default function Header(props) {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ export default function Header(props) {
         <span id="la">la</span>{" "}
         <span style={{ color: "var(--cp-Green)" }}>C</span>asa
       </div>
-      <LogIn />
+      <LogInRegisterSection />
 
       <div className="locations">
         <span className="label">LOCATIONS:</span>

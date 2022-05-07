@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { toggleForm, logOutUser } from "../actions.js";
 import userIcon from "../user.svg";
-export default function LogIn() {
+export default function LogInRegisterSection() {
   const dispatch = useDispatch();
   const user = useSelector((state) => {
     console.log(state.userReducer);
@@ -17,6 +17,9 @@ export default function LogIn() {
   //if there is a user return SignIn button, esle return a user logo
   return user.name === null ? (
     <div className="login">
+      <button className="register" onClick={openLogIn}>
+        Register
+      </button>
       <button className="logBtn1" onClick={openLogIn}>
         SignIn
       </button>
@@ -31,7 +34,7 @@ export default function LogIn() {
         </button>
       </div>
 
-      <button className="logBtn2">
+      <button className="userBtn">
         <img src={userIcon} alt="user icon" id="usericon" />
       </button>
     </div>
