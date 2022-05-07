@@ -1,7 +1,7 @@
 export default function userReducer(
   state = {
     formDisplay: "none",
-    registrationDisplay: "flex",
+    registrationDisplay: "none",
     regUser: { username: "", password: "", address: "" },
     logIn: { username: "", password: "" },
     user: { name: null, points: 0 },
