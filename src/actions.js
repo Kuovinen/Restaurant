@@ -45,6 +45,19 @@ export function logInUser(data) {
     payload: data,
   };
 }
+
+export function registerUser(data) {
+  return {
+    type: "REG_USER",
+    payload: data,
+  };
+}
+export function getUsers(data) {
+  return {
+    type: "GET_USER",
+    payload: data,
+  };
+}
 export function setLogIn(data) {
   return {
     type: "SET_LOGIN",

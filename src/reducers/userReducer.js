@@ -2,7 +2,7 @@ export default function userReducer(
   state = {
     formDisplay: "none",
     registrationDisplay: "none",
-    regUser: { username: "", password: "", address: "" },
+    regUser: { username: "", password: "", address: "", points: 0 },
     logIn: { username: "", password: "" },
     user: { name: null, points: 0 },
     users: [
@@ -55,6 +55,36 @@ export default function userReducer(
             formDisplay: "none",
           }
         : { ...state, user: { name: null, points: 0 }, signInFeedback: reply };
+
+    case "REG_USER":
+      console.log("fired off REGISTER User");
+      let nametest = /^[A-Za-z0-9]*$/.test(action.payload.username);
+      if (nametest) {
+        //session storage data check and addition:
+        if (sessionStorage.getItem("key")) {
+          let currentData = JSON.parse(sessionStorage.getItem("key"));
+          let newData = { ...action.payload, points: 900 };
+          sessionStorage.setItem(
+            "key",
+            JSON.stringify([...currentData, newData])
+          );
+        } else {
+          sessionStorage.setItem(
+            "key",
+            JSON.stringify([{ ...action.payload, points: 900 }])
+          );
+        }
+        return {
+          ...state,
+          users: [...state.users, { ...action.payload, points: 900 }],
+          registrationDisplay: "none",
+        };
+      } else {
+        return state;
+      }
+    case "GET_USER":
+      console.log("fired off GET User");
+      return { ...state, users: [...state.users, ...action.payload] };
     //for login input
     case "SET_LOGIN":
       return { ...state, logIn: action.payload };
@@ -67,7 +97,7 @@ export default function userReducer(
         regUser: action.payload,
         registerationFeedback: testName
           ? ""
-          : "plese only use letters and numbers for the username",
+          : "please only use letters and numbers for the username",
       };
     case "LOG_OUT":
       return { ...state, user: { name: null, points: 0 }, signInFeedback: "" };

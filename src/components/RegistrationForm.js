@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleRegDisplay, setRegistration } from "../actions.js";
+import { toggleRegDisplay, setRegistration, registerUser } from "../actions.js";
 export default function RegistrationForm() {
   const dispatch = useDispatch();
   const regDisplay = useSelector((state) => {
@@ -12,6 +12,15 @@ export default function RegistrationForm() {
   const registerationFeedback = useSelector((state) => {
     return state.userReducer.registerationFeedback;
   });
+
+  const regUser = useSelector((state) => {
+    console.log(state.userReducer);
+    return state.userReducer.regUser;
+  });
+
+  function registerNewUser() {
+    dispatch(registerUser(regUser));
+  }
   function hide() {
     dispatch(toggleRegDisplay());
   }
@@ -68,7 +77,7 @@ export default function RegistrationForm() {
           </div>
           <button
             className="uiContainerBtn"
-            /*onClick={handleSignIn}*/
+            onClick={registerNewUser}
             style={{ fontWeight: 700 }}
           >
             REGISTER
