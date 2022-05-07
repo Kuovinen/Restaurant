@@ -31,7 +31,7 @@ export default function LogIn() {
         </button>
       </div>
 
-      <button className="logBtn2" onClick={openLogIn}>
+      <button className="logBtn2">
         <img src={userIcon} alt="user icon" id="usericon" />
       </button>
     </div>
