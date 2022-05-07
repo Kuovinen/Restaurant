@@ -51,8 +51,7 @@ export default function Header(props) {
           ))}
           <div className="total">
             {orderArray.reduce((previous, next) => {
-              let result =
-                parseFloat(previous) + next.price * parseFloat(next.amount);
+              let result = parseFloat(previous) + next.price[1];
               result = parseFloat(result);
               result = result.toFixed(2);
               return result;

@@ -45,8 +45,8 @@ export default function OrderItem(props) {
       )}
 
       <div className="orderName">{props.title}</div>
-      <div className="orderAmount">{props.amount}</div>
-      <div className="orderPrice">{props.price}</div>
+      <div className="orderAmount">- {props.amount}</div>
+      <div className="orderPrice">{props.price[1]}</div>
     </div>
   );
 }

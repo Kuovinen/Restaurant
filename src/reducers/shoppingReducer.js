@@ -16,20 +16,41 @@ export default function shoppingReducer(state = [], action) {
           state.filter((element) => element.title === action.payload.title)
             .length > 0
         ) {
+          console.log("HERE'S THE LIST:");
+          console.log(state);
           //change amount of existing element
           let updatedArray = state.map((element) =>
             element.title === object.name
-              ? { ...element, amount: element.amount + 1 }
+              ? {
+                  ...element,
+                  amount: element.amount + 1,
+                  price: [
+                    element.price[0],
+                    ((element.amount + 1) * element.price[0]).toFixed(2),
+                  ],
+                }
               : element
           );
           return [...updatedArray];
           //if same element doesn't exists, then just add the new one
         } else {
-          return [...state, action.payload];
+          return [
+            ...state,
+            {
+              ...action.payload,
+              price: [action.payload.price[0], action.payload.price[0]],
+            },
+          ];
         }
         //if order form is still emepty add the new one
       } else {
-        return [...state, action.payload];
+        return [
+          ...state,
+          {
+            ...action.payload,
+            price: [action.payload.price[0], action.payload.price[0]],
+          },
+        ];
       }
     /********************************************************/
 
@@ -38,7 +59,14 @@ export default function shoppingReducer(state = [], action) {
 
       var updatedArray = state.reduce((result, element) => {
         if (element.title === action.payload.title && element.amount > 1) {
-          result.push({ ...element, amount: element.amount - 1 });
+          result.push({
+            ...element,
+            amount: element.amount - 1,
+            price: [
+              element.price[0],
+              ((element.amount - 1) * element.price[0]).toFixed(2),
+            ],
+          });
           return result;
         } else if (
           element.title === action.payload.title &&

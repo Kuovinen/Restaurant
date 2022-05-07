@@ -61,6 +61,7 @@ export default function userReducer(
       let nametest = /^[A-Za-z0-9]*$/.test(action.payload.username);
       if (nametest) {
         //session storage data check and addition:
+        //THIS IS an improper approach the needs a server solution instead
         if (sessionStorage.getItem("key")) {
           let currentData = JSON.parse(sessionStorage.getItem("key"));
           let newData = { ...action.payload, points: 900 };

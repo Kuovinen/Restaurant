@@ -13,6 +13,7 @@ function App() {
   const dispatch = useDispatch();
   //if session storage exist add it's contents to list of users.
   //this is where user sign in data is saved, instead of an actual server for now.
+  //THIS IS an improper approach the needs a server solution instead
   sessionStorage.getItem("key") &&
     dispatch(getUsers(JSON.parse(sessionStorage.getItem("key"))));
 
