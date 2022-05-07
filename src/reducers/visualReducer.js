@@ -2,7 +2,7 @@ export default function visualReducer(
   state = {
     orderDisplay: "none",
     dishDisplay: "none",
-    formDisplay: "none",
+
     chosenItem: {
       selectedDishTitle: "Pestromy",
       selectedDishImg: "/images/dish5.jpeg",
@@ -26,13 +26,7 @@ export default function visualReducer(
         ...state,
         dishDisplay: state.dishDisplay === "none" ? "flex" : "none",
       };
-    case "TOGGLE_FORM_DISPLAY":
-      console.log("fired off FORM_DISPLAY!");
 
-      return {
-        ...state,
-        formDisplay: state.formDisplay === "none" ? "flex" : "none",
-      };
     case "CHANGE_CHOSEN_DISH":
       console.log("fired off CHANGE_CHOSEN_DISH!");
 
