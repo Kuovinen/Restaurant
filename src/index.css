@@ -82,6 +82,7 @@ header {
   border-radius: 0.5vh;
   color: white;
   cursor: pointer;
+  user-select: none;
 }
 .userBtn {
   position: relative;
@@ -537,10 +538,12 @@ h5 {
   color: var(--cp-Green);
   margin: 5%;
   font-weight: 700;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 2vh;
-  grid-template-columns: 1fr;
-  grid-template-rows: 4vh 4vh;
+}
+.logInGrid > input {
+  height: 4vh;
 }
 input::placeholder {
   color: var(--cp-Green);
