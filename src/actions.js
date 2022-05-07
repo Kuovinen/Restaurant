@@ -33,3 +33,14 @@ export function selectDish(dish) {
     payload: dish,
   };
 }
+export function logInUser(data) {
+  return {
+    type: "SET_USER",
+    payload: data,
+  };
+}
+export function logOutUser() {
+  return {
+    type: "LOG_OUT",
+  };
+}

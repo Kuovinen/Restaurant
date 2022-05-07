@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { toggleForm } from "../actions.js";
+import { toggleForm, logOutUser } from "../actions.js";
 import userIcon from "../user.svg";
 export default function LogIn() {
   const dispatch = useDispatch();
@@ -10,6 +10,9 @@ export default function LogIn() {
 
   function openLogIn() {
     dispatch(toggleForm());
+  }
+  function logOut() {
+    dispatch(logOutUser());
   }
   //if there is a user return SignIn button, esle return a user logo
   return user.name === null ? (
@@ -23,6 +26,9 @@ export default function LogIn() {
       <div className="userData">
         <div className="user"> {user.name}</div>
         <div className="points"> Points: {user.points}</div>
+        <button className="logOut" onClick={logOut}>
+          Log out
+        </button>
       </div>
 
       <button className="logBtn2" onClick={openLogIn}>

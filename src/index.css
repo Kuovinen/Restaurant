@@ -65,6 +65,7 @@ header {
   align-items: center;
   background: none;
 }
+
 .logBtn1 {
   height: 50%;
   width: 50%;
@@ -90,6 +91,11 @@ header {
   cursor: pointer;
   margin-left: 1rem;
 }
+.userData {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 .user {
   font-weight: 1000;
   font-size: 2vh;
@@ -97,15 +103,23 @@ header {
 .points {
   font-size: 1.75vh;
 }
+.logOut {
+  color: var(--cp-Green);
+  background: none;
+  font-size: 1.75vh;
+  display: block;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.logOut:hover {
+  opacity: 0.85;
+}
 .logBtn1:hover,
 .logBtn2:hover {
   opacity: 0.85;
 }
-.userData {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
+
 #usericon {
   height: 100%;
 }
