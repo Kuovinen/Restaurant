@@ -5,6 +5,7 @@ export default function userReducer(
     regUser: { username: "", password: "", address: "", points: 0 },
     logIn: { username: "", password: "" },
     user: { name: null, points: 0 },
+    orderTime: ["09", "00"],
     users: [
       {
         username: "user1",
@@ -110,6 +111,26 @@ export default function userReducer(
       return {
         ...state,
         formDisplay: state.formDisplay === "none" ? "flex" : "none",
+      };
+    case "CHANGE_TIME":
+      console.log("fired off CHANGE_TIME!");
+      //decide which time element is being sent
+      let value = 0;
+      switch (action.payload[0]) {
+        case "hours":
+          value = 0;
+          break;
+        case "minutes":
+          value = 1;
+          break;
+        default:
+          value = 1;
+      }
+      let newData = state.orderTime;
+      newData[value] = action.payload[1];
+      return {
+        ...state,
+        orderTime: [...newData],
       };
     case "TOGGLE_REG_DISPLAY":
       console.log("fired off REG_DISPLAY!");

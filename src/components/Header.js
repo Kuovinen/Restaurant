@@ -1,24 +1,21 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-
+import { changeTime } from "../actions.js";
 import LogInRegisterSection from "./LogInRegisterSection.js";
 
 export default function Header() {
   const dispatch = useDispatch();
-
-  const [hours, setHours] = React.useState("09");
-  const [minutes, setMinutes] = React.useState("00");
-  function chngHours(event) {
-    setHours(event.target.value);
-  }
-  function chngMins(event) {
-    setMinutes(event.target.value);
+  const orderTime = useSelector((state) => {
+    return state.userReducer.orderTime;
+  });
+  function modTime(event) {
+    dispatch(changeTime([event.target.name, event.target.value]));
   }
 
   return (
     <header>
       <div className="logo">
-        <span id="la">la</span>{" "}
+        <span id="la">la</span>
         <span style={{ color: "var(--cp-Green)" }}>C</span>asa
       </div>
       <LogInRegisterSection />
@@ -32,7 +29,7 @@ export default function Header() {
         </select>
       </div>
       <div className="time">
-        <span className="label">DESIRED DELIVERY TIME: </span>{" "}
+        <span className="label">DESIRED DELIVERY TIME: </span>
         <div
           style={{
             color: "var(--cp-White)",
@@ -40,9 +37,9 @@ export default function Header() {
             fontSize: "4vh",
           }}
         >
-          {hours}:{minutes}
+          {orderTime[0]}:{orderTime[1]}
         </div>
-        <select className="deliveryTime" name="option" onChange={chngHours}>
+        <select className="deliveryTime" name="hours" onChange={modTime}>
           <option value="09">09</option>
           <option value="10">10</option>
           <option value="11">11</option>
@@ -53,7 +50,7 @@ export default function Header() {
           <option value="16">16</option>
           <option value="17">17</option>
         </select>
-        <select className="deliveryTime" name="option" onChange={chngMins}>
+        <select className="deliveryTime" name="minutes" onChange={modTime}>
           <option value="00">00</option>
           <option value="15">15</option>
           <option value="30">30</option>
