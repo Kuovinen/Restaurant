@@ -49,7 +49,6 @@ header {
 }
 #la {
   font-size: 3vh;
-  margin-right: -1rem;
 }
 .login {
   border-left: var(--border);
@@ -370,6 +369,7 @@ h5 {
   color: white;
   padding: 1vh;
   cursor: pointer;
+  user-select: none;
 }
 .orderButton:hover {
   opacity: 0.9;

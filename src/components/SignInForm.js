@@ -54,6 +54,10 @@ export default function SignInForm() {
           <button className="uiContainerBtn" onClick={handleClose}>
             CLOSE
           </button>
+          <div style={{ color: "var(--cp-Green)", opacity: "0.75" }}>
+            Make your own user or use name: 'user1', password: 'pas1' for
+            testing
+          </div>
           <div className="logInGrid">
             <input
               type="text"
