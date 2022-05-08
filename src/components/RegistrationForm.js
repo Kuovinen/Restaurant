@@ -24,6 +24,7 @@ export default function RegistrationForm() {
   function hide() {
     dispatch(toggleRegDisplay());
   }
+  //input fields typing function
   function typeField(event) {
     let value = event.target.value;
     let field = event.target.name;

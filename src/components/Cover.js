@@ -11,7 +11,6 @@ export default function Cover() {
   function hide() {
     dispatch(toggleDish());
   }
-
   return (
     <div className="greyout" onClick={hide} style={{ display: dishDisplay }}>
       <div className="selectedDishCard">
