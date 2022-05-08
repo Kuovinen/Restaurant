@@ -1,6 +1,6 @@
 import OrderFormItem from "./OrderFormItem.js";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleOrder, typeUser } from "../actions.js";
+import { toggleOrder, typeUser, toggleConfirm } from "../actions.js";
 export default function Order() {
   const dispatch = useDispatch();
   const orderDisplay = useSelector((state) => {
@@ -18,11 +18,20 @@ export default function Order() {
   function hide() {
     dispatch(toggleOrder());
   }
+  function show() {
+    dispatch(toggleConfirm());
+  }
   function typeField(event) {
     let value = event.target.value;
     let field = event.target.name;
 
     dispatch(typeUser({ [field]: value }));
+  }
+  function makeOrder() {
+    if (orderArray.length > 0 && userData.name && userData.address !== "") {
+      hide();
+      show();
+    }
   }
   return (
     <div className="greyout " style={{ display: orderDisplay }}>
@@ -95,7 +104,11 @@ export default function Order() {
           >
             before {orderTime[0]}:{orderTime[1]} o'clock
           </div>
-          <button className="uiContainerBtn" style={{ fontWeight: 700 }}>
+          <button
+            onClick={makeOrder}
+            className="uiContainerBtn"
+            style={{ fontWeight: 700 }}
+          >
             ORDER
           </button>
         </div>

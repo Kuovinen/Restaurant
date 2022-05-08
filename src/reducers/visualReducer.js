@@ -2,7 +2,7 @@ export default function visualReducer(
   state = {
     orderDisplay: "none",
     dishDisplay: "none",
-
+    confDisplay: "none",
     chosenItem: {
       selectedDishTitle: "Pestromy",
       selectedDishImg: "/images/dish5.jpeg",
@@ -26,7 +26,13 @@ export default function visualReducer(
         ...state,
         dishDisplay: state.dishDisplay === "none" ? "flex" : "none",
       };
+    case "TOGGLE_CONF":
+      console.log("fired off TOGGLE_CONF!");
 
+      return {
+        ...state,
+        confDisplay: state.confDisplay === "none" ? "flex" : "none",
+      };
     case "CHANGE_CHOSEN_DISH":
       console.log("fired off CHANGE_CHOSEN_DISH!");
 

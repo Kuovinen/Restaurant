@@ -1,42 +1,45 @@
 import { useSelector, useDispatch } from "react-redux";
-
+import { toggleConfirm } from "../actions.js";
 export default function OrderConfirmation() {
   const dispatch = useDispatch();
-  const userData = useSelector((state) => {
-    return state.userReducer;
+  const confDisplay = useSelector((state) => {
+    return state.visualReducer.confDisplay;
   });
-  const orderData = useSelector((state) => {
-    return state.shoppingReducer;
-  });
-  console.log("here's the order data");
-  console.log(orderData);
+  function hide() {
+    dispatch(toggleConfirm());
+  }
   return (
     ///REMOVE HARDCODED DISPLAY VALUE, REPLACE WITH REDUX STATE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    <div className="greyout" style={{ display: "none" }}>
+    <div className="greyout" style={{ display: confDisplay }}>
       <div className="finishedOrder">
-        <button className="closeFinal">X</button>
+        <button className="closeFinal" onClick={hide}>
+          X
+        </button>
         <div className="logo" style={{ color: "var(--cp-Grey)" }}>
-          <span id="la">la</span>{" "}
+          <span id="la">la</span>
           <span style={{ color: "var(--cp-Green)" }}>C</span>asa
         </div>
 
-        <div className="orderDetails">
-          <p>NAME</p>
-          <p>ADDRESS</p>
-          <p>TIME</p>
-          <p>FROM</p>
-          <p>TOTAL</p>
+        <div
+          style={{
+            color: "var(--cp-Grey)",
+            fontSize: "2rem",
+            textAlign: "center",
+            marginBottom: "1rem",
+          }}
+        >
+          Your order is now being prepared.
         </div>
         <div
           style={{
             color: "var(--cp-Green)",
             fontStyle: "italic",
             textAlign: "end",
-            marginRight: "1rem",
-            marginBottom: "1rem",
+            fontSize: "1.5rem",
+            margin: "2rem",
           }}
         >
-          Enjoy your meal! Thank you for choosing la Casa.
+          Enjoy your meal and thank you for choosing la Casa.
         </div>
       </div>
     </div>

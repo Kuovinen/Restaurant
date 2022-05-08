@@ -94,3 +94,9 @@ export function typeUser(data) {
     payload: data,
   };
 }
+
+export function toggleConfirm() {
+  return {
+    type: "TOGGLE_CONF",
+  };
+}
