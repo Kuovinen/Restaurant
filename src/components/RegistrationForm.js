@@ -81,7 +81,7 @@ export default function RegistrationForm() {
             style={{ fontWeight: 700 }}
           >
             REGISTER
-          </button>{" "}
+          </button>
         </div>
       </form>
     </div>

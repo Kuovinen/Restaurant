@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toggleDish, selectDish, addItem } from "../actions.js";
 export default function DishTab(props) {
   const dispatch = useDispatch();
@@ -11,7 +11,6 @@ export default function DishTab(props) {
       img: props.img,
       id: props.id,
     };
-
     dispatch(addItem(object));
   }
   //function that covers screen in black and produces and more detailed dish tab

@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { toggleDish } from "../actions.js";
-export default function Cover(props) {
+export default function Cover() {
   const dispatch = useDispatch();
   const dishDisplay = useSelector((state) => {
     return state.visualReducer.dishDisplay;

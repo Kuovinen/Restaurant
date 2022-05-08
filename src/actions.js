@@ -81,3 +81,9 @@ export function resetFeedback() {
     type: "RESET_FEEDBACK",
   };
 }
+export function changeTime(data) {
+  return {
+    type: "CHANGE_TIME",
+    payload: data,
+  };
+}

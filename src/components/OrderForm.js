@@ -37,7 +37,7 @@ export default function Order() {
             ))}
           </div>
           <div className="totalOrderForm">
-            TOTAL :{" "}
+            TOTAL :
             {orderArray.reduce((previous, next) => {
               let result = parseFloat(previous) + next.price[1];
               result = parseFloat(result);

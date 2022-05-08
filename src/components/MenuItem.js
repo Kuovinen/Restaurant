@@ -4,15 +4,7 @@ import DishTab from "./DishTab.js";
 
 export default function MenuItem(props) {
   let dishes = props.dishes.map((element) => (
-    <DishTab
-      {...element}
-      class={"dishTab"}
-      id={element.key}
-      orderArray={props.orderArray}
-      setOrderArray={props.setOrderArray}
-      setCoverDisplay={props.setCoverDisplay}
-      setSelectedDish={props.setSelectedDish}
-    />
+    <DishTab {...element} class={"dishTab"} id={element.key} />
   ));
 
   function openMenu() {

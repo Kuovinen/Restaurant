@@ -78,7 +78,7 @@ export default function SignInForm() {
             style={{ fontWeight: 700 }}
           >
             SIGN IN
-          </button>{" "}
+          </button>
         </div>
       </form>
     </div>

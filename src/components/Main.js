@@ -8,7 +8,8 @@ import coldDishes from "./foodLists/colds.js";
 import drinks from "./foodLists/drinks.js";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleOrder } from "../actions.js";
-export default function Header(props) {
+
+export default function Main() {
   const dispatch = useDispatch();
   const orderArray = useSelector((state) => {
     return state.shoppingReducer;
