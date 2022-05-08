@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addItem, rmvItem } from "../actions.js";
 export default function OrderItem(props) {
   const dispatch = useDispatch();
@@ -45,7 +45,7 @@ export default function OrderItem(props) {
       )}
 
       <div className="orderName">{props.title}</div>
-      <div className="orderAmount">- {props.amount}</div>
+      <div className="orderAmount">x {props.amount}</div>
       <div className="orderPrice">{props.price[1]}</div>
     </div>
   );

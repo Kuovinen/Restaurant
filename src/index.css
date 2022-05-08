@@ -349,7 +349,16 @@ h5 {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
 }
-
+.orderInput {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  height: 2rem;
+  color: var(--cp-Green);
+  width: 90%;
+  margin: 0 5%;
+  text-align: end;
+}
 .orderPrice,
 .orderAmount {
   text-align: flex-end;
@@ -529,6 +538,8 @@ h5 {
   font-size: 3vh;
   display: flex;
   justify-content: center;
+  border-bottom: 0.2rem solid var(--cp-Green);
+  margin-bottom: 1rem;
 }
 
 /**********************************************************/

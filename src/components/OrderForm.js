@@ -1,6 +1,6 @@
 import OrderFormItem from "./OrderFormItem.js";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleOrder } from "../actions.js";
+import { toggleOrder, typeUser } from "../actions.js";
 export default function Order() {
   const dispatch = useDispatch();
   const orderDisplay = useSelector((state) => {
@@ -9,8 +9,20 @@ export default function Order() {
   const orderArray = useSelector((state) => {
     return state.shoppingReducer;
   });
+  const orderTime = useSelector((state) => {
+    return state.userReducer.orderTime;
+  });
+  const userData = useSelector((state) => {
+    return state.userReducer.user;
+  });
   function hide() {
     dispatch(toggleOrder());
+  }
+  function typeField(event) {
+    let value = event.target.value;
+    let field = event.target.name;
+
+    dispatch(typeUser({ [field]: value }));
   }
   return (
     <div className="greyout " style={{ display: orderDisplay }}>
@@ -35,7 +47,7 @@ export default function Order() {
                 class="orderItemMain"
               /> //use KEY or maybe ID to later target specific element for removal
             ))}
-          </div>
+          </div>{" "}
           <div className="totalOrderForm">
             TOTAL :
             {orderArray.reduce((previous, next) => {
@@ -45,6 +57,43 @@ export default function Order() {
               return result;
             }, 0)}
             €
+          </div>
+          <div
+            style={{
+              color: "var(--cp-Grey)",
+              fontWeight: 700,
+              fontSize: "1.5rem",
+            }}
+          >
+            Your order will be delivered to :
+          </div>
+          <input
+            className="orderInput"
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={userData.name ? userData.name : ""}
+            onChange={typeField}
+          />
+          <input
+            className="orderInput"
+            type="text"
+            name="address"
+            placeholder="Address"
+            value={userData.name ? userData.address : ""}
+            onChange={typeField}
+          />
+          <div
+            style={{
+              color: "var(--cp-Grey)",
+              fontWeight: 700,
+              fontSize: "1.5rem",
+              textAlign: "end",
+              width: "90%",
+              margin: "0 5%",
+            }}
+          >
+            before {orderTime[0]}:{orderTime[1]} o'clock
           </div>
           <button className="uiContainerBtn" style={{ fontWeight: 700 }}>
             ORDER

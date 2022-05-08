@@ -4,7 +4,7 @@ export default function userReducer(
     registrationDisplay: "none",
     regUser: { username: "", password: "", address: "", points: 0 },
     logIn: { username: "", password: "" },
-    user: { name: null, points: 0 },
+    user: { name: null, address: "", points: 0 },
     orderTime: ["09", "00"],
     users: [
       {
@@ -16,7 +16,7 @@ export default function userReducer(
       {
         username: "user2",
         password: "pas2",
-        address: "American 456",
+        address: "America 456",
         points: 20,
       },
     ],
@@ -52,10 +52,18 @@ export default function userReducer(
       return foundUser.length === 1
         ? {
             ...state,
-            user: { name: foundUser[0].username, points: foundUser[0].points },
+            user: {
+              name: foundUser[0].username,
+              address: foundUser[0].address,
+              points: foundUser[0].points,
+            },
             formDisplay: "none",
           }
-        : { ...state, user: { name: null, points: 0 }, signInFeedback: reply };
+        : {
+            ...state,
+            user: { name: null, address: "", points: 0 },
+            signInFeedback: reply,
+          };
 
     case "REG_USER":
       console.log("fired off REGISTER User");
@@ -102,7 +110,13 @@ export default function userReducer(
           : "please only use letters and numbers for the username",
       };
     case "LOG_OUT":
-      return { ...state, user: { name: null, points: 0 }, signInFeedback: "" };
+      return {
+        ...state,
+        user: { name: null, address: "", points: 0 },
+        signInFeedback: "",
+      };
+    case "TYPE_USER":
+      return { ...state, user: { ...state.user, ...action.payload } };
     case "RESET_signInFeedback":
       return { ...state, signInFeedback: "" };
     case "TOGGLE_FORM_DISPLAY":

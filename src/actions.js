@@ -87,3 +87,10 @@ export function changeTime(data) {
     payload: data,
   };
 }
+
+export function typeUser(data) {
+  return {
+    type: "TYPE_USER",
+    payload: data,
+  };
+}
