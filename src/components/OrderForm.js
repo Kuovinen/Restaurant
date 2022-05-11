@@ -60,9 +60,8 @@ export default function Order() {
           <div className="totalOrderForm">
             Total :
             {orderArray.reduce((previous, next) => {
-              let result = parseFloat(previous) + next.price[1];
-              result = parseFloat(result);
-              result = result.toFixed(2);
+              let result = previous + next.price[1];
+              result = Math.round(result * 1e2) / 1e2;
               return result;
             }, 0)}
             €

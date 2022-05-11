@@ -26,7 +26,8 @@ export default function shoppingReducer(state = [], action) {
                   amount: element.amount + 1,
                   price: [
                     element.price[0],
-                    ((element.amount + 1) * element.price[0]).toFixed(2),
+                    Math.round((element.amount + 1) * element.price[0] * 1e2) /
+                      1e2,
                   ],
                 }
               : element
@@ -64,13 +65,13 @@ export default function shoppingReducer(state = [], action) {
             amount: element.amount - 1,
             price: [
               element.price[0],
-              ((element.amount - 1) * element.price[0]).toFixed(2),
+              Math.round((element.amount - 1) * element.price[0] * 1e2) / 1e2,
             ],
           });
           return result;
         } else if (
           element.title === action.payload.title &&
-          element.amount == 1
+          element.amount === 1
         ) {
           return result;
         }
