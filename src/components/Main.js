@@ -15,11 +15,10 @@ export default function Main() {
     return state.shoppingReducer;
   });
   let menuItems = [
-    { title: "SALADS", dishes: salads },
-    { title: "HOT DISHES", dishes: hotDishes },
-    { title: "COLD DISHES", dishes: coldDishes },
-    { title: "DRINKS", dishes: drinks },
-    { title: "FAST FOOD", dishes: salads },
+    { title: "Salads", dishes: salads },
+    { title: "Hot dishes", dishes: hotDishes },
+    { title: "Cold dishes", dishes: coldDishes },
+    { title: "Drinks", dishes: drinks },
   ];
 
   let menu = menuItems.map((element, index) => (
@@ -40,7 +39,7 @@ export default function Main() {
       {/*Order form on the right*/}
       <div className="orderForm">
         <div className="currentOrder">
-          CURRENT ORDER:
+          Current order:
           {orderArray.map((element, index) => (
             <OrderFormItem
               key={index + "order"}
@@ -61,7 +60,7 @@ export default function Main() {
           </div>
           <br />
           <button className="orderButton" onClick={displayOrder}>
-            ORDER
+            Make order
           </button>
         </div>
       </div>

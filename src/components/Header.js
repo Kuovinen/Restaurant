@@ -21,7 +21,7 @@ export default function Header() {
       <LogInRegisterSection />
 
       <div className="locations">
-        <span className="label">LOCATIONS:</span>
+        <span className="label">Locations:</span>
         <select className="locationSelect" name="option">
           <option value="1">Keskivuori 78b, Helsinki</option>
           <option value="2">Suomalahti 30, Vantaa</option>
@@ -29,7 +29,7 @@ export default function Header() {
         </select>
       </div>
       <div className="time">
-        <span className="label">DESIRED DELIVERY TIME: </span>
+        <span className="label">Desired delivery time: </span>
         <div
           style={{
             color: "var(--cp-White)",

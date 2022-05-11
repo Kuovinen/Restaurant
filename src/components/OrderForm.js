@@ -42,10 +42,10 @@ export default function Order() {
       >
         <div className="uiContainter">
           <button className="uiContainerBtn" onClick={hide}>
-            CLOSE
+            Close
           </button>
           <div className="orderContent">
-            CURRENT ORDER:
+            Current order:
             {orderArray.map((element, index) => (
               <OrderFormItem
                 img={element.img}
@@ -58,7 +58,7 @@ export default function Order() {
             ))}
           </div>{" "}
           <div className="totalOrderForm">
-            TOTAL :
+            Total :
             {orderArray.reduce((previous, next) => {
               let result = parseFloat(previous) + next.price[1];
               result = parseFloat(result);
@@ -109,7 +109,7 @@ export default function Order() {
             className="uiContainerBtn"
             style={{ fontWeight: 700 }}
           >
-            ORDER
+            Confirm order
           </button>
         </div>
       </form>
