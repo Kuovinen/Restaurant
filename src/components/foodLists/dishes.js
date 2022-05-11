@@ -32,14 +32,14 @@ let dishesList = [
     img: "/images/dish5.jpeg",
     title: "Ramen bistro",
     calories: "275cal",
-    price: [15.99, 0],
+    price: [15.79, 0],
   },
   {
     key: "6",
     img: "/images/dish6.jpeg",
     title: "Rice salad",
     calories: "290cal",
-    price: [16.99, 0],
+    price: [16.69, 0],
   },
   {
     key: "7",
@@ -53,7 +53,7 @@ let dishesList = [
     img: "/images/dish8.jpeg",
     title: "Coffee & Spice",
     calories: "300cal",
-    price: [5.99, 0],
+    price: [5.19, 0],
   },
 ];
 

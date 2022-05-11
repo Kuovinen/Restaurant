@@ -4,7 +4,7 @@ let dishesList = [
     img: "/images/dish3.jpeg",
     title: "Mozzarella in red",
     calories: "320cal",
-    price: [10.99, 0],
+    price: [10.29, 0],
     ingredients: "Mozzarella, Spinach, tomatoes",
     warnings: { gluten: false, lactose: false, nuts: false },
   },
@@ -22,7 +22,7 @@ let dishesList = [
     img: "/images/dish6.jpeg",
     title: "Rice salad",
     calories: "275cal",
-    price: [16.99, 0],
+    price: [16.19, 0],
   },
   {
     key: "7",
