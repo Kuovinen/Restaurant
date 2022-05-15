@@ -3,7 +3,7 @@ export default function userReducer(
     formDisplay: "none",
     registrationDisplay: "none",
     regUser: { username: "", password: "", address: "", points: 0 },
-    logIn: { username: "", password: "" },
+    logIn: { username: "user1", password: "pas1" },
     user: { name: null, address: "", points: 0 },
     orderTime: ["09", "00"],
     users: [
