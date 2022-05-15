@@ -22,6 +22,12 @@ body {
   width: 100%;
   min-width: 320px;
 }
+#view {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 90rem;
+}
 .bkg {
   position: fixed;
   height: 100%;
@@ -43,13 +49,14 @@ header {
   grid-template-columns: repeat(4, 1fr);
   height: auto;
   width: 100%;
-  min-width: 320px;
+  min-width: 350px;
   background: var(--cp-Black);
   box-shadow: -1rem 0rem 1rem #000000;
   color: var(--cp-Grey);
 }
 
 .logo {
+  height: 9vh;
   grid-column: 1/4;
   font-size: 6vh;
   margin-left: 1rem;
@@ -180,7 +187,7 @@ header {
   justify-content: flex-end;
   padding-right: 1rem;
   color: var(--cp-White);
-  font-size: 2vh;
+  font-size: 1rem;
   cursor: pointer;
   border: var(--border);
 }
@@ -204,7 +211,7 @@ header {
   background-color: rgba(110, 110, 110, 0.3);
   border-radius: 0.3rem;
   color: var(--cp-White);
-  font-size: 2vh;
+  font-size: 1rem;
   text-align: center;
   border: var(--border);
   cursor: pointer;
@@ -246,6 +253,7 @@ main {
   opacity: 0.85;
   cursor: pointer;
   user-select: none;
+  margin: auto;
 }
 .dishTabDaily::before {
   content: "DAILY";
@@ -629,6 +637,7 @@ input::placeholder {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto;
   }
+
   .logo {
     grid-column: 1;
     grid-row: 1;
@@ -653,11 +662,13 @@ input::placeholder {
     grid-row: 3;
   }
 }
-@media screen and (max-width: 460px) {
+
+@media screen and (max-width: 540px) {
   main {
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
   }
+
   .orderForm {
     grid-column: 1;
     grid-row: 1;

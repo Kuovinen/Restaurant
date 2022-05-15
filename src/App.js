@@ -20,12 +20,14 @@ function App() {
     <div className="App">
       <img className="bkg" src={"/images/background.jpg"} alt="" />
       <Header />
-      <Main />
-      <Cover />
-      <SignInForm />
-      <RegistrationForm />
-      <OrderForm />
-      <OrderConfirmation />
+      <div id="view">
+        <Main />
+        <Cover />
+        <SignInForm />
+        <RegistrationForm />
+        <OrderForm />
+        <OrderConfirmation />
+      </div>
     </div>
   );
 }
