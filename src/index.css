@@ -315,7 +315,8 @@ main {
   grid-row: 3;
   grid-column: 1/4;
   opacity: 0.5;
-  margin-bottom: 0.5rem;
+  position: relative;
+  bottom: 0.25rem;
 }
 h4,
 h5 {
