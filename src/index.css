@@ -43,15 +43,21 @@ body {
     width: 100%;
   }
 }
+.headContainer {
+  background: var(--cp-Black);
+  box-shadow: -1rem 0rem 1rem #000000;
+  display: flex;
+  justify-content: center;
+  background: "black";
+}
 header {
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   height: auto;
-  width: 100%;
   min-width: 350px;
-  background: var(--cp-Black);
-  box-shadow: -1rem 0rem 1rem #000000;
+  width: 100rem;
+
   color: var(--cp-Grey);
 }
 
