@@ -910,7 +910,7 @@ h5 {
   bottom: 1vh;
   right: 1vh;
   border: none;
-  background-color: var(--cp-Green);
+  background-color: var(--cp-Grey);
   border-radius: 0.5vh;
   width: 4vh;
   height: 4vh;
@@ -925,7 +925,7 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: var(--cp-Grey);
+  color: var(--cp-Green);
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1151,6 +1151,10 @@ h5 {
           justify-content: center;
   border-bottom: var(--border);
   margin-bottom: 1rem;
+}
+
+.orderPrice {
+  text-align: end;
 }
 
 body {

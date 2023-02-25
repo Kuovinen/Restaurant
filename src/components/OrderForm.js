@@ -58,12 +58,12 @@ export default function Order() {
             ))}
           </div>{" "}
           <div className="totalOrderForm">
-            Total :
+            Total :{" "}
             {orderArray.reduce((previous, next) => {
               let result = previous + next.price[1];
               result = Math.round(result * 1e2) / 1e2;
               return result;
-            }, 0)}
+            }, 0)}{" "}
             €
           </div>
           <div className="orderText">Your order will be delivered to :</div>
