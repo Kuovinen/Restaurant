@@ -1,4 +1,4 @@
-import OrderFormItem from "./OrderSection/OrderSectionItem.js";
+import OrderFormItem from "./OrderForm/OrderFormItem.js";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleOrder, typeUser, toggleConfirm } from "../actions.js";
 export default function Order() {
@@ -40,12 +40,12 @@ export default function Order() {
           event.preventDefault();
         }}
       >
-        <div className="uiContainter">
+        <div className="uiContainter finalOrderForm">
           <button className="uiContainerBtn" onClick={hide}>
             Close
           </button>
           <div className="orderContent">
-            Current order:
+            <span>Current order:</span>
             {orderArray.map((element, index) => (
               <OrderFormItem
                 img={element.img}
@@ -66,15 +66,7 @@ export default function Order() {
             }, 0)}
             €
           </div>
-          <div
-            style={{
-              color: "var(--cp-Grey)",
-              fontWeight: 700,
-              fontSize: "1.5rem",
-            }}
-          >
-            Your order will be delivered to :
-          </div>
+          <div className="orderText">Your order will be delivered to :</div>
           <input
             className="orderInput"
             type="text"
@@ -91,16 +83,7 @@ export default function Order() {
             value={userData.name ? userData.address : ""}
             onChange={typeField}
           />
-          <div
-            style={{
-              color: "var(--cp-Grey)",
-              fontWeight: 700,
-              fontSize: "1.5rem",
-              textAlign: "end",
-              width: "90%",
-              margin: "0 5%",
-            }}
-          >
+          <div className="orderTimeForm">
             before {orderTime[0]}:{orderTime[1]} o'clock
           </div>
           <button

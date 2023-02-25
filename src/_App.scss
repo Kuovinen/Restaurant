@@ -20,7 +20,7 @@
   z-index: -19;
   background-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.1),
     rgb(0, 0, 0)
   );
   color: white;
@@ -53,6 +53,7 @@ main {
   gap: 2vh;
   min-width: 20vh;
   grid-template-columns: repeat(auto-fill, minmax(20vh, 1fr));
+  border: var(--border);
 }
 
 /**********************************************************/
@@ -183,12 +184,12 @@ main {
   user-select: none;
   display: flex;
   flex-direction: column;
-  border: 0.1rem solid rgba(255, 255, 255, 0.4);
+  border: var(--border);
 }
 .uiContainerBtn {
-  background: var(--cp-GreenWeak);
+  background: var(--cp-Green);
   border: none;
-  color: white;
+  color: var(--cp-Grey);
   padding: 0.5vh;
   cursor: pointer;
   font-size: 2vh;
@@ -203,7 +204,7 @@ main {
   border: none;
   padding: 0.2rem;
   border-radius: 0.2rem;
-  color: var(--cp-Grey2);
+  color: var(--cp-Grey);
   font-size: 1.1rem;
 }
 .logInGrid > input:focus {
@@ -212,6 +213,7 @@ main {
 .greyout {
   background: var(--cp-Black);
   position: fixed;
+  overflow-y: scroll;
   justify-content: center;
   width: 100vw;
   min-width: 320px;
@@ -252,5 +254,8 @@ main {
 
 .orderDetails {
   margin: 1rem;
+  color: var(--cp-Grey);
+}
+.break {
   color: var(--cp-Grey);
 }

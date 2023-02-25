@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header.js";
 import Main from "./components/Main.js";
 import Dimmer from "./components/Dimmer.js";
-import OrderSection from "./components/OrderSection.js";
+import OrderForm from "./components/OrderForm.js";
 import SignInForm from "./components/SignInForm.js";
 import RegistrationForm from "./components/RegistrationForm.js";
 import OrderConfirmation from "./components/OrderConfirmation.js";
@@ -26,7 +26,7 @@ function App() {
         <Dimmer />
         <SignInForm />
         <RegistrationForm />
-        <OrderSection />
+        <OrderForm />
         <OrderConfirmation />
       </div>
     </div>

@@ -1,13 +1,15 @@
 :root {
-  --cp-Green: rgb(45, 131, 64);
-  --cp-GreenWeak: rgb(40, 167, 69, 0.65);
-  --cp-Red: rgb(220, 53, 69);
+  --cp-Green: rgb(45, 131, 65);
+  --cp-Green: rgb(69, 47, 24);
+  --cp-Green2: rgb(61, 49, 37);
+  --cp-Red: rgb(77, 59, 61);
   --cp-Black: rgb(0, 0, 0);
-  --cp-Grey: rgb(179, 179, 179);
-  --cp-Grey2: rgb(90, 90, 90);
-  --cp-Grey3: rgba(12, 23, 29, 0.3);
-  --cp-Black: rgba(0, 0, 0);
-  --cp-Black80: rgba(4, 8, 12, 0.9);
+  --cp-Grey: rgb(174, 169, 152);
+  --cp-Greyb: rgb(154, 150, 139);
+  --cp-Grey2: rgb(66, 65, 60);
+  --cp-Grey3: rgb(23, 35, 37);
+  --cp-Black: rgba(0, 0, 0, 0.9);
+  --cp-Black80: rgba(0, 0, 0, 0.9);
   --border: 0.1rem solid var(--cp-Grey2);
 }
 
@@ -38,8 +40,8 @@
   height: 100%;
   width: 100%;
   z-index: -19;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(black));
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), black);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(black));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), black);
   color: white;
 }
 
@@ -78,6 +80,7 @@ main {
   min-width: 20vh;
   -ms-grid-columns: (minmax(20vh, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(20vh, 1fr));
+  border: var(--border);
 }
 
 /**********************************************************/
@@ -252,13 +255,13 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 0.1rem solid rgba(255, 255, 255, 0.4);
+  border: var(--border);
 }
 
 .uiContainerBtn {
-  background: var(--cp-GreenWeak);
+  background: var(--cp-Green);
   border: none;
-  color: white;
+  color: var(--cp-Grey);
   padding: 0.5vh;
   cursor: pointer;
   font-size: 2vh;
@@ -275,7 +278,7 @@ main {
   border: none;
   padding: 0.2rem;
   border-radius: 0.2rem;
-  color: var(--cp-Grey2);
+  color: var(--cp-Grey);
   font-size: 1.1rem;
 }
 
@@ -286,6 +289,7 @@ main {
 .greyout {
   background: var(--cp-Black);
   position: fixed;
+  overflow-y: scroll;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -339,8 +343,12 @@ main {
   color: var(--cp-Grey);
 }
 
+.break {
+  color: var(--cp-Grey);
+}
+
 .headContainer {
-  background: var(--cp-Black);
+  background: black;
   -webkit-box-shadow: -1rem 0rem 1rem #000000;
           box-shadow: -1rem 0rem 1rem #000000;
   display: -webkit-box;
@@ -376,7 +384,7 @@ header {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  color: white;
+  color: var(--cp-Grey);
 }
 
 #la {
@@ -425,7 +433,7 @@ header {
   background: var(--cp-Green);
   border: none;
   border-radius: 0.5vh;
-  color: white;
+  color: var(--cp-Grey);
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -445,6 +453,7 @@ header {
   height: 3rem;
   cursor: pointer;
   margin: 0 0.5rem;
+  background: var(--cp-Grey);
 }
 
 .userData {
@@ -490,12 +499,12 @@ header {
 
 .logBtn1:hover,
 .register:hover {
-  opacity: 0.85;
+  opacity: 0.55;
 }
 
 #usericon {
   height: 100%;
-  opacity: 0.9;
+  opacity: 1;
   outline: 0.25rem solid var(--cp-Green);
   outline-offset: -2px;
   border-radius: 50%;
@@ -628,6 +637,11 @@ header {
   margin-right: 1rem;
 }
 
+.selectedDishClose,
+.selectedDish {
+  border-radius: 0.5rem;
+}
+
 .logInGrid {
   color: var(--cp-Green);
   margin: 5%;
@@ -647,30 +661,73 @@ header {
 }
 
 input::-webkit-input-placeholder {
-  color: var(--cp-Green);
-  font-weight: 700;
+  color: var(--cp-Grey);
+  font-weight: 200;
 }
 
 input:-ms-input-placeholder {
-  color: var(--cp-Green);
-  font-weight: 700;
+  color: var(--cp-Grey);
+  font-weight: 200;
 }
 
 input::-ms-input-placeholder {
-  color: var(--cp-Green);
-  font-weight: 700;
+  color: var(--cp-Grey);
+  font-weight: 200;
 }
 
 input::placeholder {
-  color: var(--cp-Green);
-  font-weight: 700;
+  color: var(--cp-Grey);
+  font-weight: 200;
+}
+
+.total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+  margin: 0.5rem 0;
+  border-top: 0.1rem solid var(--cp-Grey);
+  padding-top: 0.5rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.orderSection {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+  color: white;
+}
+
+.currentOrder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: var(--cp-Black80);
+  border-radius: 0.5vh;
+  min-width: 30vh;
+  padding: 1rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border: var(--border);
 }
 
 /*-----------------------------------------------------------*/
 /*MENU: -----------------------------------------------------*/
 /*-----------------------------------------------------------*/
 .menuTitle {
-  color: rgba(255, 255, 255, 0.706);
+  color: var(--cp-Greyb);
   font-size: 2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -681,6 +738,7 @@ input::placeholder {
   font-weight: 700;
   padding-left: 1rem;
   margin-bottom: 1rem;
+  text-decoration: underline;
 }
 
 .menu {
@@ -699,6 +757,7 @@ input::placeholder {
   grid-row: 2;
   -ms-grid-column: 1;
   grid-column: 1;
+  border: var(--border);
 }
 
 .menuButton {
@@ -708,10 +767,12 @@ input::placeholder {
           user-select: none;
   font-size: 2vh;
   font-weight: 200;
-  background-color: var(--cp-Grey);
+  background-color: var(--cp-Green2);
   padding: 0.75vh;
   opacity: 0.85;
   cursor: pointer;
+  color: var(--cp-Greyb);
+  margin-bottom: 0.2rem;
 }
 
 .menuButton:hover {
@@ -730,7 +791,7 @@ input::placeholder {
 
 .dishTabDaily,
 .dishTab {
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--cp-Grey3);
   border-radius: 0.5vh;
   width: 20vh;
   overflow: hidden;
@@ -743,12 +804,15 @@ input::placeholder {
       -ms-user-select: none;
           user-select: none;
   margin: auto;
+  -webkit-box-shadow: 0.2rem 0.2rem 5px black;
+          box-shadow: 0.2rem 0.2rem 5px black;
+  border: var(--border);
 }
 
 .dishTabDaily::before {
   content: "DAILY";
   position: absolute;
-  background: var(--cp-Green);
+  background: var(--cp-Grey3);
   color: var(--cp-Green);
   margin-top: 0.3vh;
   margin-left: 6.5vh;
@@ -761,13 +825,13 @@ input::placeholder {
 
 @-webkit-keyframes blink {
   50% {
-    color: white;
+    color: var(--cp-Grey);
   }
 }
 
 @keyframes blink {
   50% {
-    color: white;
+    color: var(--cp-Grey);
   }
 }
 
@@ -806,10 +870,12 @@ input::placeholder {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1/3;
+  color: var(--cp-Grey);
+  font-weight: 200;
 }
 
 .price {
-  color: var(--cp-Green);
+  color: var(--cp-Grey);
   -ms-grid-row: 1;
   grid-row: 1;
   -ms-grid-column: 3;
@@ -828,9 +894,10 @@ input::placeholder {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
-  opacity: 0.5;
   position: relative;
   bottom: 0.25rem;
+  opacity: 0.6;
+  color: var(--cp-Grey);
 }
 
 h4,
@@ -858,7 +925,7 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: white;
+  color: var(--cp-Grey);
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -887,52 +954,28 @@ h5 {
   transition: 1s;
 }
 
-.orderForm {
-  -ms-grid-column: 2;
-  grid-column: 2;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1/3;
-  color: white;
+.orderContent {
+  color: var(--cp-Grey);
+  font-size: 3vh;
+  padding: 2vh;
+  overflow-y: scroll;
+  max-height: 80vh;
 }
 
-.currentOrder {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background: var(--cp-Black80);
-  border-radius: 0.5vh;
-  min-width: 30vh;
-  padding: 1rem;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+.orderText {
+  margin: 0 0.5rem;
+  color: var(--cp-Grey);
 }
 
-.total {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  color: white;
-}
-
-.total {
-  margin-top: 1rem;
-  border-top: 0.1rem solid white;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+.orderTimeForm {
+  margin: 0 0.5rem;
+  color: var(--cp-Grey);
+  text-align: end;
+  margin: 0 5%;
 }
 
 .orderItemSide {
-  color: white;
+  color: var(--cp-Grey);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2fr 1fr 1fr;
@@ -942,24 +985,33 @@ h5 {
 .orderInput {
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 1.1rem;
   height: 2rem;
-  color: var(--cp-Green);
+  color: var(--cp-Grey);
   width: 90%;
   margin: 0 5%;
   text-align: end;
 }
 
+.orderInput:focus {
+  outline: none;
+}
+
 .orderPrice,
 .orderAmount {
   text-align: flex-end;
+  font-size: 1.1rem;
+}
+
+.orderName {
+  font-size: 1.1rem;
 }
 
 .orderButton {
   background: var(--cp-Green);
   border: none;
   border-radius: 0.5vh;
-  color: white;
+  color: var(--cp-Grey);
   padding: 1vh;
   cursor: pointer;
   font-size: 1.25rem;
@@ -978,7 +1030,7 @@ h5 {
 /*-----------------------------------------------------------*/
 .selectedDishCard {
   width: 35vw;
-  background: white;
+  color: var(--cp-Grey);
   overflow: hidden;
   border-radius: 0.5vh;
   display: -webkit-box;
@@ -1000,26 +1052,26 @@ h5 {
 
 .selectedDishTitle {
   text-align: center;
-  font-size: 6vh;
+  font-size: 5vh;
 }
 
 .selectedDishCard > p {
   margin: 2vh;
-  font-size: 3vh;
+  font-size: 1rem;
 }
 
 .selectedDishCard > button {
   background: var(--cp-Green);
   border: none;
   padding: 2vh;
-  color: white;
+  color: var(--cp-Grey);
   font-weight: 700;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
 .selectedDishCardClose {
-  font-size: 2rem;
+  font-size: 1rem;
   position: absolute;
   right: 2vh;
   cursor: pointer;
@@ -1032,14 +1084,6 @@ h5 {
   }
 }
 
-.orderContent {
-  color: white;
-  font-size: 3vh;
-  padding: 2vh;
-  overflow-y: scroll;
-  max-height: 80vh;
-}
-
 .orderImg {
   width: 10vh;
   border-radius: 0.5vh;
@@ -1047,7 +1091,7 @@ h5 {
 }
 
 .orderItemMain {
-  color: white;
+  color: var(--cp-Grey);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 20vh 3fr 3fr 3fr;
@@ -1066,7 +1110,7 @@ h5 {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: white;
+  background: var(--cp-Grey);
   border-radius: 0.2vh;
 }
 
@@ -1098,14 +1142,14 @@ h5 {
 .totalOrderForm {
   color: var(--cp-Green);
   font-weight: 700;
-  font-size: 3vh;
+  font-size: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-bottom: 0.2rem solid var(--cp-Green);
+  border-bottom: var(--border);
   margin-bottom: 1rem;
 }
 
@@ -1264,5 +1308,16 @@ main {
     -ms-grid-row: 4;
     grid-row: 4;
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--cp-Green);
+  border-radius: 0.2vh;
 }
 /*# sourceMappingURL=index.css.map */

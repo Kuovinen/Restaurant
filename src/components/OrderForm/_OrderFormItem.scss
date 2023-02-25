@@ -4,7 +4,7 @@
 
 .selectedDishCard {
   width: 35vw;
-  background: white;
+  color: var(--cp-Grey);
   overflow: hidden;
   border-radius: 0.5vh;
   display: flex;
@@ -15,23 +15,23 @@
 }
 .selectedDishTitle {
   text-align: center;
-  font-size: 6vh;
+  font-size: 5vh;
 }
 .selectedDishCard > p {
   margin: 2vh;
-  font-size: 3vh;
+  font-size: 1rem;
 }
 .selectedDishCard > button {
   background: var(--cp-Green);
   border: none;
   padding: 2vh;
-  color: white;
+  color: var(--cp-Grey);
   font-weight: 700;
   font-size: 1.5rem;
   cursor: pointer;
 }
 .selectedDishCardClose {
-  font-size: 2rem;
+  font-size: 1rem;
   position: absolute;
   right: 2vh;
   cursor: pointer;
@@ -43,21 +43,13 @@
     width: 100vw;
   }
 }
-
-.orderContent {
-  color: white;
-  font-size: 3vh;
-  padding: 2vh;
-  overflow-y: scroll;
-  max-height: 80vh;
-}
 .orderImg {
   width: 10vh;
   border-radius: 0.5vh;
   display: block;
 }
 .orderItemMain {
-  color: white;
+  color: var(--cp-Grey);
   display: grid;
   grid-template-columns: 20vh 3fr 3fr 3fr;
   gap: 2vh;
@@ -71,7 +63,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: white;
+  background: var(--cp-Grey);
   border-radius: 0.2vh;
 }
 .minus,
@@ -93,9 +85,9 @@
 .totalOrderForm {
   color: var(--cp-Green);
   font-weight: 700;
-  font-size: 3vh;
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
-  border-bottom: 0.2rem solid var(--cp-Green);
+  border-bottom: var(--border);
   margin-bottom: 1rem;
 }

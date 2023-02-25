@@ -1,7 +1,7 @@
 import DishTab from "./Main/DishTab.js";
 import dishesList from "./foodLists/dailies.js";
 import MenuItem from "./Main/MenuItem.js";
-import OrderFormItem from "./OrderSection/OrderSectionItem.js";
+import OrderFormItem from "./OrderForm/OrderFormItem.js";
 import salads from "./foodLists/salads.js";
 import hotDishes from "./foodLists/hots.js";
 import coldDishes from "./foodLists/colds.js";
@@ -37,7 +37,7 @@ export default function Main() {
       {/*DAILY DISHES*/}
       <div className="dishes">{dishes}</div>
       {/*Order form on the right*/}
-      <div className="orderForm">
+      <div className="orderSection">
         <div className="currentOrder">
           Current order:
           {orderArray.map((element, index) => (
@@ -48,7 +48,8 @@ export default function Main() {
               amount={element.amount}
               class="orderItemSide"
             /> //use KEY or maybe ID to later target specific element for removal
-          ))}
+          ))}{" "}
+          <br />
           <div className="total">
             {orderArray.reduce((previous, next) => {
               let result = previous + next.price[1];
@@ -57,9 +58,8 @@ export default function Main() {
             }, 0)}
             €
           </div>
-          <br />
           <button className="orderButton" onClick={displayOrder}>
-            Make order
+            Order
           </button>
         </div>
       </div>

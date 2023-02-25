@@ -1,53 +1,53 @@
-.orderForm {
-  grid-column: 2;
-  grid-row: 1/3;
-  color: white;
-}
-.currentOrder {
-  display: flex;
-  flex-direction: column;
-  background: var(--cp-Black80);
-  border-radius: 0.5vh;
-  min-width: 30vh;
-  padding: 1rem;
-  position: sticky;
-  top: 0;
+.orderContent {
+  color: var(--cp-Grey);
+  font-size: 3vh;
+  padding: 2vh;
+  overflow-y: scroll;
+  max-height: 80vh;
 }
 
-.total {
-  display: flex;
-  justify-content: space-between;
-  color: white;
+.orderText {
+  margin: 0 0.5rem;
+  color: var(--cp-Grey);
 }
-.total {
-  margin-top: 1rem;
-  border-top: 0.1rem solid white;
-  justify-content: flex-end;
+.orderTimeForm {
+  margin: 0 0.5rem;
+  color: var(--cp-Grey);
+  text-align: end;
+  margin: 0 5%;
 }
+
 .orderItemSide {
-  color: white;
+  color: var(--cp-Grey);
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
 }
 .orderInput {
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 1.1rem;
   height: 2rem;
-  color: var(--cp-Green);
+  color: var(--cp-Grey);
   width: 90%;
   margin: 0 5%;
   text-align: end;
 }
+.orderInput:focus {
+  outline: none;
+}
 .orderPrice,
 .orderAmount {
   text-align: flex-end;
+  font-size: 1.1rem;
+}
+.orderName {
+  font-size: 1.1rem;
 }
 .orderButton {
   background: var(--cp-Green);
   border: none;
   border-radius: 0.5vh;
-  color: white;
+  color: var(--cp-Grey);
   padding: 1vh;
   cursor: pointer;
   font-size: 1.25rem;

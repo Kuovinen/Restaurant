@@ -1,6 +1,6 @@
 .dishTabDaily,
 .dishTab {
-  background: hsla(0, 0%, 100%, 0.85);
+  background: var(--cp-Grey3);
   border-radius: 0.5vh;
   width: 20vh;
   overflow: hidden;
@@ -10,11 +10,13 @@
   cursor: pointer;
   user-select: none;
   margin: auto;
+  box-shadow: 0.2rem 0.2rem 5px black;
+  border: var(--border);
 }
 .dishTabDaily::before {
   content: "DAILY";
   position: absolute;
-  background: var(--cp-Green);
+  background: var(--cp-Grey3);
   color: var(--cp-Green);
   margin-top: 0.3vh;
   margin-left: 6.5vh;
@@ -26,7 +28,7 @@
 
 @keyframes blink {
   50% {
-    color: white;
+    color: var(--cp-Grey);
   }
 }
 
@@ -53,9 +55,11 @@
 .title {
   grid-column: 1/3;
   grid-row: 1/3;
+  color: var(--cp-Grey);
+  font-weight: 200;
 }
 .price {
-  color: var(--cp-Green);
+  color: var(--cp-Grey);
   grid-row: 1;
   grid-column: 3;
   display: flex;
@@ -64,9 +68,10 @@
 .calories {
   grid-row: 3;
   grid-column: 1/4;
-  opacity: 0.5;
   position: relative;
   bottom: 0.25rem;
+  opacity: 0.6;
+  color: var(--cp-Grey);
 }
 h4,
 h5 {
@@ -86,7 +91,7 @@ h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: var(--cp-Grey);
   cursor: pointer;
   user-select: none;
 }

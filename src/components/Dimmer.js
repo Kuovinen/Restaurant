@@ -16,7 +16,6 @@ export default function Cover() {
   return (
     <div className="greyout" onClick={hide} style={{ display: dishDisplay }}>
       <div className="selectedDishCard">
-        <div className="selectedDishCardClose">X</div>
         <div className="selectedDishTitle">
           {selectedDish.selectedDishTitle}
         </div>

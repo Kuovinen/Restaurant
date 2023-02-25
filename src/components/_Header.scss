@@ -1,5 +1,5 @@
 .headContainer {
-  background: var(--cp-Black);
+  background: black;
   box-shadow: -1rem 0rem 1rem #000000;
   display: flex;
   justify-content: center;
@@ -23,7 +23,7 @@ header {
   margin-left: 1rem;
   font-weight: 1000;
   user-select: none;
-  color: white;
+  color: var(--cp-Grey);
 }
 #la {
   font-size: 3vh;
@@ -55,7 +55,7 @@ header {
   background: var(--cp-Green);
   border: none;
   border-radius: 0.5vh;
-  color: white;
+  color: var(--cp-Grey);
   cursor: pointer;
   user-select: none;
 }
@@ -70,6 +70,7 @@ header {
   height: 3rem;
   cursor: pointer;
   margin: 0 0.5rem;
+  background: var(--cp-Grey);
 }
 .userData {
   display: flex;
@@ -99,12 +100,12 @@ header {
 }
 .logBtn1:hover,
 .register:hover {
-  opacity: 0.85;
+  opacity: 0.55;
 }
 
 #usericon {
   height: 100%;
-  opacity: 0.9;
+  opacity: 1;
   outline: 0.25rem solid var(--cp-Green);
   outline-offset: -2px;
   border-radius: 50%;
