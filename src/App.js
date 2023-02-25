@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "./components/Header.js";
 import Main from "./components/Main.js";
-import Cover from "./components/Cover.js";
-import OrderForm from "./components/OrderForm.js";
+import Dimmer from "./components/Dimmer.js";
+import OrderSection from "./components/OrderSection.js";
 import SignInForm from "./components/SignInForm.js";
 import RegistrationForm from "./components/RegistrationForm.js";
 import OrderConfirmation from "./components/OrderConfirmation.js";
@@ -18,14 +18,15 @@ function App() {
 
   return (
     <div className="App">
-      <img className="bkg" src={"/images/background.jpg"} alt="" />
+      <img className="bkg" src={"/images/background.jpg"} alt="background" />
+      <div className="gradient"></div>
       <Header />
       <div id="view">
         <Main />
-        <Cover />
+        <Dimmer />
         <SignInForm />
         <RegistrationForm />
-        <OrderForm />
+        <OrderSection />
         <OrderConfirmation />
       </div>
     </div>

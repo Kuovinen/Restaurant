@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addItem, rmvItem } from "../actions.js";
+import { addItem, rmvItem } from "../../actions.js";
 export default function OrderItem(props) {
   const dispatch = useDispatch();
 

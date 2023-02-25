@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { toggleForm, toggleRegDisplay, logOutUser } from "../actions.js";
-import userIcon from "../user.svg";
+import { toggleForm, toggleRegDisplay, logOutUser } from "../../actions.js";
+import userIcon from "../../user.svg";
 export default function LogInRegisterSection() {
   const dispatch = useDispatch();
   const user = useSelector((state) => {

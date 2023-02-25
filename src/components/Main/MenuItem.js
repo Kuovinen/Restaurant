@@ -11,7 +11,7 @@ export default function MenuItem(props) {
     display === "none" ? setDisplay("grid") : setDisplay("none");
   }
   let [display, setDisplay] = useState("none");
-
+  const indicator = display === "none" ? "-" : "▼";
   return (
     <div>
       <div
@@ -20,7 +20,7 @@ export default function MenuItem(props) {
           openMenu();
         }}
       >
-        {props.title}
+        {indicator} {props.title}
       </div>
       <div className="menuContent" style={{ display: display }}>
         {dishes}

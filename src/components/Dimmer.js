@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { toggleDish } from "../actions.js";
+
+//Used to dim the main page before overlaying the dishDisplay or ChosenItem
 export default function Cover() {
   const dispatch = useDispatch();
   const dishDisplay = useSelector((state) => {

@@ -1,17 +1,16 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleForm, logInUser, setLogIn, resetFeedback } from "../actions.js";
+
 export default function SignInForm() {
   const dispatch = useDispatch();
   const formDisplay = useSelector((state) => {
     return state.userReducer.formDisplay;
   });
   const logIn = useSelector((state) => {
-    console.log(state.userReducer);
     return state.userReducer.logIn;
   });
   const feedBack = useSelector((state) => {
-    console.log(state.userReducer);
     return state.userReducer.signInFeedback;
   });
   function hide() {
@@ -23,7 +22,6 @@ export default function SignInForm() {
 
     dispatch(setLogIn({ ...logIn, [field]: value }));
   }
-
   function handleClose() {
     dispatch(setLogIn({ username: "", password: "" }));
     dispatch(resetFeedback());
@@ -54,9 +52,18 @@ export default function SignInForm() {
           <button className="uiContainerBtn" onClick={handleClose}>
             CLOSE
           </button>
-          <div style={{ color: "var(--cp-Green)", opacity: "0.75" }}>
-            Make your own user or use name: 'user1', password: 'pas1' for
-            testing
+          <div
+            style={{
+              color: "var(--cp-Green)",
+              opacity: "0.75",
+              margin: "0 1rem",
+            }}
+          >
+            <span style={{ opacity: "0.5" }}>
+              {" "}
+              Make your own user or use name: 'user1', password: 'pas1' for
+              testing
+            </span>
           </div>
           <div className="logInGrid">
             <input
@@ -64,7 +71,7 @@ export default function SignInForm() {
               name="username"
               value={logIn.username}
               onChange={typeField}
-              placeholder="name"
+              placeholder="Name"
             />
 
             <input
@@ -72,15 +79,11 @@ export default function SignInForm() {
               name="password"
               value={logIn.password}
               onChange={typeField}
-              placeholder="password"
+              placeholder="Password"
             />
             <span style={{ color: "red", margin: "0 auto" }}>{feedBack}</span>
           </div>
-          <button
-            className="uiContainerBtn"
-            onClick={handleSignIn}
-            style={{ fontWeight: 700 }}
-          >
+          <button className="uiContainerBtn" onClick={handleSignIn}>
             SIGN IN
           </button>
         </div>

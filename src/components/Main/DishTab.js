@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { toggleDish, selectDish, addItem } from "../actions.js";
+import { toggleDish, selectDish, addItem } from "../../actions.js";
 export default function DishTab(props) {
   const dispatch = useDispatch();
 

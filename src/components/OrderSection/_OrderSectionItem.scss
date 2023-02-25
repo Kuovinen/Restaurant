@@ -2,16 +2,6 @@
 /*SELECTED DISH: --------------------------------------------*/
 /*-----------------------------------------------------------*/
 
-.greyout {
-  background: var(--cp-Black80);
-  position: fixed;
-  justify-content: center;
-  width: 100vw;
-  min-width: 320px;
-  height: 100%;
-  z-index: 25;
-  top: 0;
-}
 .selectedDishCard {
   width: 35vw;
   background: white;
@@ -47,32 +37,13 @@
   cursor: pointer;
   top: 2vh;
 }
-.uiContainter {
-  width: 60vw;
-  background: var(--cp-Black80);
-  border-radius: 0.5vh;
-  overflow: hidden;
-  margin-top: 1rem;
-  user-select: none;
-  min-width: 320px;
-}
+
 @media (max-width: 600px) {
   .uiContainter {
     width: 100vw;
   }
 }
-.uiContainerBtn {
-  width: 100%;
-  background: var(--cp-Green);
-  border: none;
-  color: white;
-  padding: 1vh;
-  cursor: pointer;
-  font-size: 2vh;
-}
-.uiContainerBtn:hover {
-  opacity: 0.85;
-}
+
 .orderContent {
   color: white;
   font-size: 3vh;

@@ -1,13 +1,15 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { changeTime } from "../actions.js";
-import LogInRegisterSection from "./LogInRegisterSection.js";
+import LogInRegisterSection from "./Header/LogInRegisterSection.js";
 
 export default function Header() {
   const dispatch = useDispatch();
+  //selected time of order
   const orderTime = useSelector((state) => {
     return state.userReducer.orderTime;
   });
+  //change time of order
   function modTime(event) {
     dispatch(changeTime([event.target.name, event.target.value]));
   }

@@ -1,0 +1,15 @@
+.logInGrid {
+  color: var(--cp-Green);
+  margin: 5%;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+.logInGrid > input {
+  height: 4vh;
+}
+input::placeholder {
+  color: var(--cp-Green);
+  font-weight: 700;
+}

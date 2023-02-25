@@ -1,4 +1,4 @@
-import OrderFormItem from "./OrderFormItem.js";
+import OrderFormItem from "./OrderSection/OrderSectionItem.js";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleOrder, typeUser, toggleConfirm } from "../actions.js";
 export default function Order() {
