@@ -37,8 +37,6 @@ export default function userReducer(
   }
   switch (action.type) {
     case "SET_USER":
-      console.log("fired off logInUser");
-
       //check if login user exists
       let foundUser = state.users.filter(
         (element) =>
@@ -66,7 +64,6 @@ export default function userReducer(
           };
 
     case "REG_USER":
-      console.log("fired off REGISTER User");
       let nametest = /^[A-Za-z0-9]*$/.test(action.payload.username);
       if (nametest) {
         //session storage data check and addition:
@@ -93,7 +90,6 @@ export default function userReducer(
         return state;
       }
     case "GET_USER":
-      console.log("fired off GET User");
       return { ...state, users: [...state.users, ...action.payload] };
     //for login input
     case "SET_LOGIN":
@@ -120,14 +116,11 @@ export default function userReducer(
     case "RESET_signInFeedback":
       return { ...state, signInFeedback: "" };
     case "TOGGLE_FORM_DISPLAY":
-      console.log("fired off FORM_DISPLAY!");
-
       return {
         ...state,
         formDisplay: state.formDisplay === "none" ? "flex" : "none",
       };
     case "CHANGE_TIME":
-      console.log("fired off CHANGE_TIME!");
       //decide which time element is being sent
       let value = 0;
       switch (action.payload[0]) {
@@ -147,8 +140,6 @@ export default function userReducer(
         orderTime: [...newData],
       };
     case "TOGGLE_REG_DISPLAY":
-      console.log("fired off REG_DISPLAY!");
-
       return {
         ...state,
         registrationDisplay:

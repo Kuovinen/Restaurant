@@ -4,7 +4,6 @@ import userIcon from "../../user.svg";
 export default function LogInRegisterSection() {
   const dispatch = useDispatch();
   const user = useSelector((state) => {
-    console.log(state.userReducer);
     return state.userReducer.user;
   });
 

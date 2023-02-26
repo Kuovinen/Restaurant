@@ -14,7 +14,6 @@ export default function RegistrationForm() {
   });
 
   const regUser = useSelector((state) => {
-    console.log(state.userReducer);
     return state.userReducer.regUser;
   });
 

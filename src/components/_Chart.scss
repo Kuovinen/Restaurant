@@ -1,0 +1,143 @@
+.chart {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem;
+  position: relative;
+  overflow: hidden;
+}
+#foodIcon {
+  position: relative;
+}
+#motobike,
+#foodTray {
+  height: 3rem;
+  filter: invert(73%) sepia(17%) saturate(218%) hue-rotate(9deg) brightness(90%)
+    contrast(90%);
+}
+#motobike2 {
+  position: absolute;
+  height: 3rem;
+  filter: invert(73%) sepia(17%) saturate(218%) hue-rotate(9deg) brightness(90%)
+    contrast(90%);
+  animation: drive 2s 0s 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+.endPointChartTxt {
+  color: var(--cp-Grey);
+}
+#foodTray {
+  height: 1rem;
+  top: -1rem;
+  left: 0.5rem;
+  position: absolute;
+  opacity: 0;
+}
+.animate {
+  animation: dropFood 0.2s 0s 1;
+  animation-fill-mode: forwards;
+}
+
+.motoChart {
+  width: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.trace {
+  display: relative;
+  display: flex;
+}
+.dots {
+  height: 1rem;
+  position: relative;
+  top: -0.1rem;
+  border-top: 0.25rem var(--cp-Grey) dashed;
+}
+p {
+  font-weight: bold;
+  color: var(--cp-Grey);
+}
+.arrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1rem;
+  transition: 1s;
+}
+.arrow > div {
+  position: relative;
+  left: -0.25rem;
+  transform: rotate(45deg);
+  height: 0.5rem;
+  width: 0.51rem;
+  border-top: 0.25rem var(--cp-Grey) solid;
+  border-right: 0.25rem var(--cp-Grey) solid;
+}
+
+#gratitude {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  animation-name: appear;
+  animation-duration: 2.5s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.distanceChart {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  transition: 1s;
+}
+.distanceChart > * {
+  flex: 1;
+}
+.endPointChart {
+  display: flex;
+  font-weight: bold;
+  flex-direction: column;
+  justify-content: center;
+  transition: 1s;
+}
+@keyframes dropFood {
+  0% {
+    top: -1rem;
+    opacity: 0;
+  }
+  5% {
+    top: -1rem;
+    opacity: 1;
+  }
+  75% {
+    top: -0.25rem;
+    opacity: 1;
+  }
+  to {
+    top: -0.1rem;
+    opacity: 0;
+  }
+}
+@keyframes drive {
+  0% {
+    left: 0.5rem;
+  }
+
+  100% {
+    left: 13rem;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

@@ -642,6 +642,250 @@ header {
   border-radius: 0.5rem;
 }
 
+.chart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#foodIcon {
+  position: relative;
+}
+
+#motobike,
+#foodTray {
+  height: 3rem;
+  -webkit-filter: invert(73%) sepia(17%) saturate(218%) hue-rotate(9deg) brightness(90%) contrast(90%);
+          filter: invert(73%) sepia(17%) saturate(218%) hue-rotate(9deg) brightness(90%) contrast(90%);
+}
+
+#motobike2 {
+  position: absolute;
+  height: 3rem;
+  -webkit-filter: invert(73%) sepia(17%) saturate(218%) hue-rotate(9deg) brightness(90%) contrast(90%);
+          filter: invert(73%) sepia(17%) saturate(218%) hue-rotate(9deg) brightness(90%) contrast(90%);
+  -webkit-animation: drive 2s 0s 1;
+          animation: drive 2s 0s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+.endPointChartTxt {
+  color: var(--cp-Grey);
+}
+
+#foodTray {
+  height: 1rem;
+  top: -1rem;
+  left: 0.5rem;
+  position: absolute;
+  opacity: 0;
+}
+
+.animate {
+  -webkit-animation: dropFood 0.2s 0s 1;
+          animation: dropFood 0.2s 0s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.motoChart {
+  width: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.trace {
+  display: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dots {
+  height: 1rem;
+  position: relative;
+  top: -0.1rem;
+  border-top: 0.25rem var(--cp-Grey) dashed;
+}
+
+p {
+  font-weight: bold;
+  color: var(--cp-Grey);
+}
+
+.arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 1rem;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.arrow > div {
+  position: relative;
+  left: -0.25rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  height: 0.5rem;
+  width: 0.51rem;
+  border-top: 0.25rem var(--cp-Grey) solid;
+  border-right: 0.25rem var(--cp-Grey) solid;
+}
+
+#gratitude {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.distanceChart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-weight: 400;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.distanceChart > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.endPointChart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bold;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+@-webkit-keyframes dropFood {
+  0% {
+    top: -1rem;
+    opacity: 0;
+  }
+  5% {
+    top: -1rem;
+    opacity: 1;
+  }
+  75% {
+    top: -0.25rem;
+    opacity: 1;
+  }
+  to {
+    top: -0.1rem;
+    opacity: 0;
+  }
+}
+
+@keyframes dropFood {
+  0% {
+    top: -1rem;
+    opacity: 0;
+  }
+  5% {
+    top: -1rem;
+    opacity: 1;
+  }
+  75% {
+    top: -0.25rem;
+    opacity: 1;
+  }
+  to {
+    top: -0.1rem;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes drive {
+  0% {
+    left: 0.5rem;
+  }
+  100% {
+    left: 13rem;
+  }
+}
+
+@keyframes drive {
+  0% {
+    left: 0.5rem;
+  }
+  100% {
+    left: 13rem;
+  }
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .logInGrid {
   color: var(--cp-Green);
   margin: 5%;

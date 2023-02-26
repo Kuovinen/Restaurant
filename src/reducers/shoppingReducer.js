@@ -2,7 +2,6 @@ export default function shoppingReducer(state = [], action) {
   switch (action.type) {
     case "ADD_ITEM":
       /***********************************************************/
-      console.log("fired off addItem");
       let object = {
         name: action.payload.title,
         amount: 1,
@@ -16,8 +15,6 @@ export default function shoppingReducer(state = [], action) {
           state.filter((element) => element.title === action.payload.title)
             .length > 0
         ) {
-          console.log("HERE'S THE LIST:");
-          console.log(state);
           //change amount of existing element
           let updatedArray = state.map((element) =>
             element.title === object.name
@@ -56,8 +53,6 @@ export default function shoppingReducer(state = [], action) {
     /********************************************************/
 
     case "REMOVE_ITEM":
-      console.log("fired off rwvItem");
-
       var updatedArray = state.reduce((result, element) => {
         if (element.title === action.payload.title && element.amount > 1) {
           result.push({

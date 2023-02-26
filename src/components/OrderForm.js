@@ -1,7 +1,13 @@
 import OrderFormItem from "./OrderForm/OrderFormItem.js";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleOrder, typeUser, toggleConfirm } from "../actions.js";
+import Chart from "./Chart";
 export default function Order() {
+  const [btnTxt, setBtnTxt] = React.useState("Confirm order");
+  const [promptTxt, setPromptTxt] = React.useState(
+    "Your order will be delivered to :"
+  );
   const dispatch = useDispatch();
   const orderDisplay = useSelector((state) => {
     return state.visualReducer.orderDisplay;
@@ -28,9 +34,13 @@ export default function Order() {
     dispatch(typeUser({ [field]: value }));
   }
   function makeOrder() {
+    console.log(orderArray.length);
     if (orderArray.length > 0 && userData.name && userData.address !== "") {
-      hide();
-      show();
+      //hide();
+      //show();
+      setBtnTxt(() => "Confirmed");
+    } else if (!userData.name == "" || userData.address == "") {
+      setPromptTxt(() => "Please fill out the name and addres fields.");
     }
   }
   return (
@@ -66,7 +76,7 @@ export default function Order() {
             }, 0)}{" "}
             €
           </div>
-          <div className="orderText">Your order will be delivered to :</div>
+          <div className="orderText">{promptTxt}</div>
           <input
             className="orderInput"
             type="text"
@@ -83,15 +93,13 @@ export default function Order() {
             value={userData.name ? userData.address : ""}
             onChange={typeField}
           />
-          <div className="orderTimeForm">
-            before {orderTime[0]}:{orderTime[1]} o'clock
-          </div>
+          <Chart time={orderTime} btnTxt={btnTxt} />
           <button
             onClick={makeOrder}
             className="uiContainerBtn"
             style={{ fontWeight: 700 }}
           >
-            Confirm order
+            {btnTxt}
           </button>
         </div>
       </form>
